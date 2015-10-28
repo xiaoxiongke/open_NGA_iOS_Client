@@ -1,34 +1,28 @@
 //
-//  SMHomeNavViewController.m
+//  SMChatSettingController.m
 //  NGA
 //
-//  Created by eorin on 15/10/28.
+//  Created by eorin on 15/10/29.
 //  Copyright © 2015年 eorin. All rights reserved.
 //
 
-#import "SMHomeNavViewController.h"
+#import "SMChatSettingController.h"
 
-
-
-@interface SMHomeNavViewController ()
+@interface SMChatSettingController ()
 
 @end
 
-@implementation SMHomeNavViewController
+@implementation SMChatSettingController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationBar.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"homeview_nav_bottomline"]];
-//    [self.navigationBar setBackgroundImage:[] forBarMetrics:UIBarMetricsDefault];
-//    [self.navigationBar setTintColor:[UIColor blackColor]];
-    
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 /*
 #pragma mark - Navigation

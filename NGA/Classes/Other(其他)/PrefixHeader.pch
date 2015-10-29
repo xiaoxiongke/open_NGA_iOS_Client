@@ -16,6 +16,8 @@
 #define SMColor(r,g,b)  [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
 // 全局颜色
 #define SMGlobleColor SMColor(255, 251, 233)
+#import "MMDrawerController.h"
+#import "UIViewController+MMDrawerController.h"
 
 
 #endif /* PrefixHeader_pch */

@@ -17,7 +17,7 @@
 #import "SMSettingLabelCell.h"
 #import "SMSettingLabelItem.h"
 #import "SMSettingGroup.h"
-
+#import "UIBarButtonItem+Extension.h"
 
 
 
@@ -29,10 +29,27 @@
 
 @implementation SMSettingViewController
 
+
+- (NSMutableArray *)settingItems{
+    if (!_settingItems) {
+        _settingItems = [NSMutableArray array];
+    }
+    return _settingItems;
+}
+
+// 初始化方法
+- (id)init
+{
+    return [super initWithStyle:UITableViewStyleGrouped];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.backgroundColor = [UIColor grayColor];
+    self.tableView.contentInset = UIEdgeInsetsMake(-30, 0, 0, 0);
+    
+    self.title = @"设置";
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(showLeftMenu) image:@"index_drawerleft" highImage:nil];
     
     // 第0组
     [self addGroup0];
@@ -40,6 +57,14 @@
     [self addGroup1];
     // 第2组
     [self addGroup2];
+}
+
+/**
+ *  显示左侧菜单
+ */
+- (void)showLeftMenu{
+    
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
 
 - (void)addGroup0
@@ -63,6 +88,7 @@
     
     
 }
+
 
 
 - (void)addGroup1
@@ -122,14 +148,19 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
 
-    return 3;
+    return self.settingItems.count;
 }
+
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return self.settingItems.count;
+
+    SMSettingGroup *group = self.settingItems[section];
+    return group.items.count;
 }
 
 
@@ -143,11 +174,18 @@
     SMSettingGroup *group = self.settingItems[indexPath.section];
     SMSettingItem *item = group.items[indexPath.row];
     
-    
+    NSLog(@"jkjkh");
     // 传递模型
     cell.item = item;
     
     return cell;
+}
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+
+        return nil;
+    
 }
 
 /*

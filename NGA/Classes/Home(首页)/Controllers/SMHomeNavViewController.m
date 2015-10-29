@@ -18,9 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationBar.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"homeview_nav_bottomline"]];
-//    [self.navigationBar setBackgroundImage:[] forBarMetrics:UIBarMetricsDefault];
-//    [self.navigationBar setTintColor:[UIColor blackColor]];
+    self.navigationBar.backgroundColor = SMGlobleColor;
+
     
 }
 

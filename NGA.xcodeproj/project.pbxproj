@@ -10,12 +10,12 @@
 		550078F21BE05BEE00CFD781 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 550078F11BE05BEE00CFD781 /* UIBarButtonItem+Extension.m */; };
 		550079001BE0616B00CFD781 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 550078F31BE0616B00CFD781 /* Foundation+Log.m */; };
 		5506B9911BE0E37000299633 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5506B9901BE0E37000299633 /* UIView+Extension.m */; };
-		5506B99E1BE0F5E500299633 /* SMForumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5506B99D1BE0F5E500299633 /* SMForumViewController.m */; };
 		5506B9A11BE0F60800299633 /* SMMissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5506B9A01BE0F60800299633 /* SMMissionViewController.m */; };
 		5506B9A41BE0F61400299633 /* SMShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5506B9A31BE0F61400299633 /* SMShopViewController.m */; };
 		5506B9A71BE0F63300299633 /* SMInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5506B9A61BE0F63300299633 /* SMInviteViewController.m */; };
 		5506B9AA1BE0F65300299633 /* SMScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5506B9A91BE0F65300299633 /* SMScanViewController.m */; };
 		5506B9B01BE0F67800299633 /* SMSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5506B9AF1BE0F67800299633 /* SMSettingViewController.m */; };
+		552066A31BE1EAD30083A3F0 /* SMForumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 552066A01BE1EAD30083A3F0 /* SMForumViewController.m */; };
 		5533D76A1BE06D8D0005D0E3 /* SMHomeNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5533D7691BE06D8D0005D0E3 /* SMHomeNavViewController.m */; };
 		553DEC7B1BE0BD3E0084C789 /* SMLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 553DEC7A1BE0BD3E0084C789 /* SMLeftView.m */; };
 		553DEC7D1BE0BD5A0084C789 /* SMLeftView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 553DEC7C1BE0BD5A0084C789 /* SMLeftView.xib */; };
@@ -72,18 +72,18 @@
 		5506B98F1BE0E37000299633 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		5506B9901BE0E37000299633 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		5506B9981BE0F0E900299633 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		5506B99C1BE0F5E500299633 /* SMForumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMForumViewController.h; path = "../../BBS(论坛) /Controllers/SMForumViewController.h"; sourceTree = "<group>"; };
-		5506B99D1BE0F5E500299633 /* SMForumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMForumViewController.m; path = "../../BBS(论坛) /Controllers/SMForumViewController.m"; sourceTree = "<group>"; };
-		5506B99F1BE0F60800299633 /* SMMissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMMissionViewController.h; sourceTree = "<group>"; };
-		5506B9A01BE0F60800299633 /* SMMissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMMissionViewController.m; sourceTree = "<group>"; };
-		5506B9A21BE0F61400299633 /* SMShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMShopViewController.h; sourceTree = "<group>"; };
-		5506B9A31BE0F61400299633 /* SMShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMShopViewController.m; sourceTree = "<group>"; };
-		5506B9A51BE0F63300299633 /* SMInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMInviteViewController.h; sourceTree = "<group>"; };
-		5506B9A61BE0F63300299633 /* SMInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMInviteViewController.m; sourceTree = "<group>"; };
-		5506B9A81BE0F65300299633 /* SMScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMScanViewController.h; sourceTree = "<group>"; };
-		5506B9A91BE0F65300299633 /* SMScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMScanViewController.m; sourceTree = "<group>"; };
-		5506B9AE1BE0F67800299633 /* SMSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSettingViewController.h; sourceTree = "<group>"; };
-		5506B9AF1BE0F67800299633 /* SMSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSettingViewController.m; sourceTree = "<group>"; };
+		5506B99F1BE0F60800299633 /* SMMissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMMissionViewController.h; path = ../../Controllers/SMMissionViewController.h; sourceTree = "<group>"; };
+		5506B9A01BE0F60800299633 /* SMMissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMMissionViewController.m; path = ../../Controllers/SMMissionViewController.m; sourceTree = "<group>"; };
+		5506B9A21BE0F61400299633 /* SMShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMShopViewController.h; path = ../../Controllers/SMShopViewController.h; sourceTree = "<group>"; };
+		5506B9A31BE0F61400299633 /* SMShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMShopViewController.m; path = ../../Controllers/SMShopViewController.m; sourceTree = "<group>"; };
+		5506B9A51BE0F63300299633 /* SMInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMInviteViewController.h; path = ../../Controllers/SMInviteViewController.h; sourceTree = "<group>"; };
+		5506B9A61BE0F63300299633 /* SMInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMInviteViewController.m; path = ../../Controllers/SMInviteViewController.m; sourceTree = "<group>"; };
+		5506B9A81BE0F65300299633 /* SMScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMScanViewController.h; path = ../Controllers/SMScanViewController.h; sourceTree = "<group>"; };
+		5506B9A91BE0F65300299633 /* SMScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMScanViewController.m; path = ../Controllers/SMScanViewController.m; sourceTree = "<group>"; };
+		5506B9AE1BE0F67800299633 /* SMSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMSettingViewController.h; path = ../../Controllers/SMSettingViewController.h; sourceTree = "<group>"; };
+		5506B9AF1BE0F67800299633 /* SMSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMSettingViewController.m; path = ../../Controllers/SMSettingViewController.m; sourceTree = "<group>"; };
+		5520669F1BE1EAD30083A3F0 /* SMForumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMForumViewController.h; sourceTree = "<group>"; };
+		552066A01BE1EAD30083A3F0 /* SMForumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMForumViewController.m; sourceTree = "<group>"; };
 		5533D7681BE06D8D0005D0E3 /* SMHomeNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMHomeNavViewController.h; sourceTree = "<group>"; };
 		5533D7691BE06D8D0005D0E3 /* SMHomeNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMHomeNavViewController.m; sourceTree = "<group>"; };
 		553DEC791BE0BD3E0084C789 /* SMLeftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMLeftView.h; sourceTree = "<group>"; };
@@ -191,48 +191,241 @@
 			path = Catagory;
 			sourceTree = "<group>";
 		};
-		55CAA2261BE04FB30057A058 /* Classes */ = {
+		552066871BE1E9AE0083A3F0 /* AboutUs */ = {
 			isa = PBXGroup;
 			children = (
-				55CAA2631BE052070057A058 /* Main(主要) */,
-				55CAA2531BE051F60057A058 /* Other(其他) */,
-				55CAA2271BE04FB30057A058 /* BBS(论坛)  */,
-				55CAA22B1BE04FB30057A058 /* Home(首页) */,
-				55CAA2311BE04FB30057A058 /* leftMenu(左侧菜单) */,
-				55CAA2461BE04FB30057A058 /* Search(搜索) */,
+				552066A51BE1EB520083A3F0 /* View */,
+				552066A41BE1EB480083A3F0 /* Controller */,
 			);
-			path = Classes;
+			name = AboutUs;
+			path = ../Controllers;
 			sourceTree = "<group>";
 		};
-		55CAA2271BE04FB30057A058 /* BBS(论坛)  */ = {
+		552066891BE1EA870083A3F0 /* invite(组队) */ = {
 			isa = PBXGroup;
 			children = (
-				55CAA2281BE04FB30057A058 /* Controllers */,
-				55CAA2291BE04FB30057A058 /* Model */,
-				55CAA22A1BE04FB30057A058 /* View */,
+				5520668A1BE1EA870083A3F0 /* Controller */,
+				5520668B1BE1EA870083A3F0 /* Model */,
+				5520668C1BE1EA870083A3F0 /* View */,
 			);
-			path = "BBS(论坛) ";
+			path = "invite(组队)";
 			sourceTree = "<group>";
 		};
-		55CAA2281BE04FB30057A058 /* Controllers */ = {
+		5520668A1BE1EA870083A3F0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5506B9A51BE0F63300299633 /* SMInviteViewController.h */,
+				5506B9A61BE0F63300299633 /* SMInviteViewController.m */,
 			);
-			path = Controllers;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		55CAA2291BE04FB30057A058 /* Model */ = {
+		5520668B1BE1EA870083A3F0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		55CAA22A1BE04FB30057A058 /* View */ = {
+		5520668C1BE1EA870083A3F0 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5520668D1BE1EA870083A3F0 /* mission(任务) */ = {
+			isa = PBXGroup;
+			children = (
+				5520668E1BE1EA870083A3F0 /* Controller */,
+				5520668F1BE1EA870083A3F0 /* Model */,
+				552066901BE1EA870083A3F0 /* View */,
+			);
+			path = "mission(任务)";
+			sourceTree = "<group>";
+		};
+		5520668E1BE1EA870083A3F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5506B99F1BE0F60800299633 /* SMMissionViewController.h */,
+				5506B9A01BE0F60800299633 /* SMMissionViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5520668F1BE1EA870083A3F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		552066901BE1EA870083A3F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		552066911BE1EA870083A3F0 /* scan(扫码) */ = {
+			isa = PBXGroup;
+			children = (
+				5506B9A81BE0F65300299633 /* SMScanViewController.h */,
+				5506B9A91BE0F65300299633 /* SMScanViewController.m */,
+				552066921BE1EA870083A3F0 /* Controller */,
+				552066931BE1EA870083A3F0 /* Model */,
+				552066941BE1EA870083A3F0 /* View */,
+			);
+			path = "scan(扫码)";
+			sourceTree = "<group>";
+		};
+		552066921BE1EA870083A3F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		552066931BE1EA870083A3F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		552066941BE1EA870083A3F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		552066951BE1EA870083A3F0 /* settings(设置) */ = {
+			isa = PBXGroup;
+			children = (
+				552066871BE1E9AE0083A3F0 /* AboutUs */,
+				552066961BE1EA870083A3F0 /* Controller */,
+				552066971BE1EA870083A3F0 /* Model */,
+				552066981BE1EA870083A3F0 /* View */,
+			);
+			path = "settings(设置)";
+			sourceTree = "<group>";
+		};
+		552066961BE1EA870083A3F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5506B9AE1BE0F67800299633 /* SMSettingViewController.h */,
+				5506B9AF1BE0F67800299633 /* SMSettingViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		552066971BE1EA870083A3F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		552066981BE1EA870083A3F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		552066991BE1EA870083A3F0 /* shop(商店) */ = {
+			isa = PBXGroup;
+			children = (
+				5520669A1BE1EA870083A3F0 /* Controller */,
+				5520669B1BE1EA870083A3F0 /* Model */,
+				5520669C1BE1EA870083A3F0 /* View */,
+			);
+			path = "shop(商店)";
+			sourceTree = "<group>";
+		};
+		5520669A1BE1EA870083A3F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5506B9A21BE0F61400299633 /* SMShopViewController.h */,
+				5506B9A31BE0F61400299633 /* SMShopViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5520669B1BE1EA870083A3F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5520669C1BE1EA870083A3F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5520669D1BE1EAD30083A3F0 /* BBS(论坛)  */ = {
+			isa = PBXGroup;
+			children = (
+				5520669E1BE1EAD30083A3F0 /* Controllers */,
+				552066A11BE1EAD30083A3F0 /* Model */,
+				552066A21BE1EAD30083A3F0 /* View */,
+			);
+			path = "BBS(论坛) ";
+			sourceTree = "<group>";
+		};
+		5520669E1BE1EAD30083A3F0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5520669F1BE1EAD30083A3F0 /* SMForumViewController.h */,
+				552066A01BE1EAD30083A3F0 /* SMForumViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		552066A11BE1EAD30083A3F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		552066A21BE1EAD30083A3F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		552066A41BE1EB480083A3F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				55D41F851BE12C3500CF9DF0 /* SMAboutUsController.h */,
+				55D41F861BE12C3500CF9DF0 /* SMAboutUsController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		552066A51BE1EB520083A3F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		55CAA2261BE04FB30057A058 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				55CAA2631BE052070057A058 /* Main(主要) */,
+				55CAA2531BE051F60057A058 /* Other(其他) */,
+				55CAA22B1BE04FB30057A058 /* Home(首页) */,
+				55CAA2311BE04FB30057A058 /* leftMenu(左侧菜单) */,
+				55CAA2461BE04FB30057A058 /* Search(搜索) */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		55CAA22B1BE04FB30057A058 /* Home(首页) */ = {
@@ -273,6 +466,12 @@
 		55CAA2311BE04FB30057A058 /* leftMenu(左侧菜单) */ = {
 			isa = PBXGroup;
 			children = (
+				5520669D1BE1EAD30083A3F0 /* BBS(论坛)  */,
+				552066891BE1EA870083A3F0 /* invite(组队) */,
+				5520668D1BE1EA870083A3F0 /* mission(任务) */,
+				552066911BE1EA870083A3F0 /* scan(扫码) */,
+				552066951BE1EA870083A3F0 /* settings(设置) */,
+				552066991BE1EA870083A3F0 /* shop(商店) */,
 				55CAA2321BE04FB30057A058 /* Controllers */,
 				55CAA2331BE04FB30057A058 /* Model */,
 				55CAA2371BE04FB30057A058 /* View */,
@@ -283,20 +482,8 @@
 		55CAA2321BE04FB30057A058 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5506B99C1BE0F5E500299633 /* SMForumViewController.h */,
-				5506B99D1BE0F5E500299633 /* SMForumViewController.m */,
 				55CAA2341BE04FB30057A058 /* SMLeftMenuViewController.h */,
 				55CAA2351BE04FB30057A058 /* SMLeftMenuViewController.m */,
-				5506B99F1BE0F60800299633 /* SMMissionViewController.h */,
-				5506B9A01BE0F60800299633 /* SMMissionViewController.m */,
-				5506B9A21BE0F61400299633 /* SMShopViewController.h */,
-				5506B9A31BE0F61400299633 /* SMShopViewController.m */,
-				5506B9A51BE0F63300299633 /* SMInviteViewController.h */,
-				5506B9A61BE0F63300299633 /* SMInviteViewController.m */,
-				5506B9A81BE0F65300299633 /* SMScanViewController.h */,
-				5506B9A91BE0F65300299633 /* SMScanViewController.m */,
-				5506B9AE1BE0F67800299633 /* SMSettingViewController.h */,
-				5506B9AF1BE0F67800299633 /* SMSettingViewController.m */,
 				55D41F6D1BE1143E00CF9DF0 /* SMLeftNavController.h */,
 				55D41F6E1BE1143E00CF9DF0 /* SMLeftNavController.m */,
 				55D41F7C1BE12BE100CF9DF0 /* SMAccountManaController.h */,
@@ -305,8 +492,6 @@
 				55D41F801BE12C0700CF9DF0 /* SMChangePwdController.m */,
 				55D41F821BE12C1700CF9DF0 /* SMChatSettingController.h */,
 				55D41F831BE12C1700CF9DF0 /* SMChatSettingController.m */,
-				55D41F851BE12C3500CF9DF0 /* SMAboutUsController.h */,
-				55D41F861BE12C3500CF9DF0 /* SMAboutUsController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -675,12 +860,12 @@
 				55CAA24B1BE04FB30057A058 /* SMLeftMenuViewController.m in Sources */,
 				557AFD591BE1CF9900E97235 /* SMItemCell.m in Sources */,
 				557AFD681BE1D24600E97235 /* SMNormalItem.m in Sources */,
-				5506B99E1BE0F5E500299633 /* SMForumViewController.m in Sources */,
 				550078F21BE05BEE00CFD781 /* UIBarButtonItem+Extension.m in Sources */,
 				5506B9AA1BE0F65300299633 /* SMScanViewController.m in Sources */,
 				55CAA24A1BE04FB30057A058 /* SMHomeViewController.m in Sources */,
 				55CAA2621BE051F60057A058 /* main.m in Sources */,
 				55CAA25D1BE051F60057A058 /* AppDelegate.m in Sources */,
+				552066A31BE1EAD30083A3F0 /* SMForumViewController.m in Sources */,
 				5506B9A41BE0F61400299633 /* SMShopViewController.m in Sources */,
 				550079001BE0616B00CFD781 /* Foundation+Log.m in Sources */,
 				55D41F7E1BE12BE100CF9DF0 /* SMAccountManaController.m in Sources */,

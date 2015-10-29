@@ -19,7 +19,7 @@
 #import "SMAboutUsController.h"
 #import "SMChangePwdController.h"
 #import "SMChatSettingController.h"
-
+#import "SMHomeNavViewController.h"
 
 #import "SMSettingGroup.h"
 #import "UIBarButtonItem+Extension.h"
@@ -54,7 +54,7 @@
     self.tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
     
     self.title = @"设置";
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(showLeftMenu) image:@"index_drawerleft" highImage:nil];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(showLeftMenu) image:@"index_drawerleft" highImage:@""];
     
     // 第0组
     [self addGroup0];

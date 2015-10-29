@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="164" id="PDa-zH-h4q">
+            <rect key="frame" x="0.0" y="0.0" width="536" height="164"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PDa-zH-h4q" id="Ap6-ZR-e87">
+                <rect key="frame" x="0.0" y="0.0" width="536" height="163"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQY-II-5xT" userLabel="left">
+                        <rect key="frame" x="8" y="8" width="150" height="147"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdP-Vt-jav">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="147"/>
+                                <state key="normal" backgroundImage="recommend_forumbg"/>
+                                <state key="highlighted" backgroundImage="recommend_forumbg_night"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="英雄联盟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5V-xv-mcD">
+                                <rect key="frame" x="41" y="0.0" width="68" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="fLq-Yl-lfv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.074509803920000006" green="0.43921568630000002" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S5赛季总决赛" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8y-cd-0Zx">
+                                <rect key="frame" x="35" y="21" width="81" height="15"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="T5V-xv-mcD" firstAttribute="top" secondItem="rQY-II-5xT" secondAttribute="top" id="6ub-vy-fqf"/>
+                            <constraint firstItem="gdP-Vt-jav" firstAttribute="top" secondItem="rQY-II-5xT" secondAttribute="top" id="NIG-P1-fEK"/>
+                            <constraint firstItem="T5V-xv-mcD" firstAttribute="centerX" secondItem="gdP-Vt-jav" secondAttribute="centerX" id="auz-7W-F0Z"/>
+                            <constraint firstItem="gdP-Vt-jav" firstAttribute="leading" secondItem="rQY-II-5xT" secondAttribute="leading" id="hd2-0j-dAC"/>
+                            <constraint firstAttribute="trailing" secondItem="gdP-Vt-jav" secondAttribute="trailing" id="i2e-Qz-1rv"/>
+                            <constraint firstItem="o8y-cd-0Zx" firstAttribute="top" secondItem="T5V-xv-mcD" secondAttribute="bottom" id="qJs-RD-xQ0"/>
+                            <constraint firstAttribute="width" constant="150" id="tUJ-Wy-D5n"/>
+                            <constraint firstItem="o8y-cd-0Zx" firstAttribute="centerX" secondItem="T5V-xv-mcD" secondAttribute="centerX" id="vnz-YI-shy"/>
+                            <constraint firstItem="o8y-cd-0Zx" firstAttribute="centerX" secondItem="T5V-xv-mcD" secondAttribute="centerX" id="zVa-R8-Gmh"/>
+                            <constraint firstAttribute="bottom" secondItem="gdP-Vt-jav" secondAttribute="bottom" id="zhy-CP-KUO"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UCd-yz-5yq" userLabel="right">
+                        <rect key="frame" x="378" y="8" width="150" height="147"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62y-za-be8">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="147"/>
+                                <state key="normal" backgroundImage="recommend_forumbg"/>
+                                <state key="highlighted" backgroundImage="recommend_forumbg_night"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美服beta测试" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkT-z1-poZ">
+                                <rect key="frame" x="37" y="21" width="75" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="T55-Bd-hqM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="守望先锋" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFf-sZ-eIM">
+                                <rect key="frame" x="41" y="0.0" width="68" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="R6R-kW-IKe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.074509803920000006" green="0.43921568630000002" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="62y-za-be8" firstAttribute="top" secondItem="UCd-yz-5yq" secondAttribute="top" id="1nu-o7-vUN"/>
+                            <constraint firstItem="NFf-sZ-eIM" firstAttribute="centerX" secondItem="UCd-yz-5yq" secondAttribute="centerX" id="4Gb-z0-axe"/>
+                            <constraint firstItem="NFf-sZ-eIM" firstAttribute="top" secondItem="62y-za-be8" secondAttribute="top" id="8I5-d7-cNv"/>
+                            <constraint firstAttribute="width" constant="150" id="A9d-36-9rw"/>
+                            <constraint firstItem="wkT-z1-poZ" firstAttribute="centerX" secondItem="NFf-sZ-eIM" secondAttribute="centerX" id="AD8-8g-GyE"/>
+                            <constraint firstAttribute="trailing" secondItem="62y-za-be8" secondAttribute="trailing" id="Q5c-AO-Jxa"/>
+                            <constraint firstItem="wkT-z1-poZ" firstAttribute="top" secondItem="NFf-sZ-eIM" secondAttribute="bottom" id="Raw-1X-BS2"/>
+                            <constraint firstItem="62y-za-be8" firstAttribute="leading" secondItem="UCd-yz-5yq" secondAttribute="leading" id="ZKy-xk-eLO"/>
+                            <constraint firstItem="NFf-sZ-eIM" firstAttribute="top" secondItem="UCd-yz-5yq" secondAttribute="top" id="bk7-fM-PmB"/>
+                            <constraint firstItem="NFf-sZ-eIM" firstAttribute="centerX" secondItem="62y-za-be8" secondAttribute="centerX" id="iVg-Lr-TWc"/>
+                            <constraint firstAttribute="bottom" secondItem="62y-za-be8" secondAttribute="bottom" id="kqO-PH-y1X"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="rQY-II-5xT" firstAttribute="bottom" secondItem="Ap6-ZR-e87" secondAttribute="bottomMargin" id="3Qa-N1-iwI"/>
+                    <constraint firstItem="UCd-yz-5yq" firstAttribute="trailing" secondItem="Ap6-ZR-e87" secondAttribute="trailingMargin" id="9Pk-pY-geX"/>
+                    <constraint firstItem="rQY-II-5xT" firstAttribute="leading" secondItem="Ap6-ZR-e87" secondAttribute="leadingMargin" id="RQB-6e-6dW"/>
+                    <constraint firstItem="UCd-yz-5yq" firstAttribute="top" secondItem="Ap6-ZR-e87" secondAttribute="topMargin" id="nb2-aG-REB"/>
+                    <constraint firstItem="rQY-II-5xT" firstAttribute="top" secondItem="Ap6-ZR-e87" secondAttribute="topMargin" id="oWT-xY-TNi"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="UCd-yz-5yq" secondAttribute="bottom" id="qUg-av-Rlh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="490" y="778"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="recommend_forumbg" width="153" height="53"/>
+        <image name="recommend_forumbg_night" width="153" height="53"/>
+    </resources>
+</document>

@@ -15,6 +15,8 @@
 		5506B9A71BE0F63300299633 /* SMInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5506B9A61BE0F63300299633 /* SMInviteViewController.m */; };
 		5506B9AA1BE0F65300299633 /* SMScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5506B9A91BE0F65300299633 /* SMScanViewController.m */; };
 		5506B9B01BE0F67800299633 /* SMSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5506B9AF1BE0F67800299633 /* SMSettingViewController.m */; };
+		550D98FE1BE20FDB003EA39A /* SMRecomendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 550D98FD1BE20FDB003EA39A /* SMRecomendCell.m */; };
+		550D99021BE217F7003EA39A /* SMRecomendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550D99011BE217F7003EA39A /* SMRecomendCell.xib */; };
 		552066A31BE1EAD30083A3F0 /* SMForumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 552066A01BE1EAD30083A3F0 /* SMForumViewController.m */; };
 		5533D76A1BE06D8D0005D0E3 /* SMHomeNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5533D7691BE06D8D0005D0E3 /* SMHomeNavViewController.m */; };
 		553DEC7B1BE0BD3E0084C789 /* SMLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 553DEC7A1BE0BD3E0084C789 /* SMLeftView.m */; };
@@ -82,6 +84,9 @@
 		5506B9A91BE0F65300299633 /* SMScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMScanViewController.m; path = ../Controllers/SMScanViewController.m; sourceTree = "<group>"; };
 		5506B9AE1BE0F67800299633 /* SMSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMSettingViewController.h; path = ../../Controllers/SMSettingViewController.h; sourceTree = "<group>"; };
 		5506B9AF1BE0F67800299633 /* SMSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMSettingViewController.m; path = ../../Controllers/SMSettingViewController.m; sourceTree = "<group>"; };
+		550D98FC1BE20FDB003EA39A /* SMRecomendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMRecomendCell.h; sourceTree = "<group>"; };
+		550D98FD1BE20FDB003EA39A /* SMRecomendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMRecomendCell.m; sourceTree = "<group>"; };
+		550D99011BE217F7003EA39A /* SMRecomendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMRecomendCell.xib; sourceTree = "<group>"; };
 		5520669F1BE1EAD30083A3F0 /* SMForumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMForumViewController.h; sourceTree = "<group>"; };
 		552066A01BE1EAD30083A3F0 /* SMForumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMForumViewController.m; sourceTree = "<group>"; };
 		5533D7681BE06D8D0005D0E3 /* SMHomeNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMHomeNavViewController.h; sourceTree = "<group>"; };
@@ -459,6 +464,9 @@
 		55CAA2301BE04FB30057A058 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				550D98FC1BE20FDB003EA39A /* SMRecomendCell.h */,
+				550D98FD1BE20FDB003EA39A /* SMRecomendCell.m */,
+				550D99011BE217F7003EA39A /* SMRecomendCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -781,6 +789,7 @@
 				55CAA2611BE051F60057A058 /* Info.plist in Resources */,
 				553DEC7D1BE0BD5A0084C789 /* SMLeftView.xib in Resources */,
 				55CAA25F1BE051F60057A058 /* LaunchScreen.storyboard in Resources */,
+				550D99021BE217F7003EA39A /* SMRecomendCell.xib in Resources */,
 				55CAA25E1BE051F60057A058 /* Assets.xcassets in Resources */,
 				55F3C36F1BDFB0E300836D4D /* Podfile in Resources */,
 			);
@@ -885,6 +894,7 @@
 				557AFD5F1BE1D17500E97235 /* SMNormalCell.m in Sources */,
 				557AFD651BE1D19100E97235 /* SMLabelCell.m in Sources */,
 				55D41F871BE12C3500CF9DF0 /* SMAboutUsController.m in Sources */,
+				550D98FE1BE20FDB003EA39A /* SMRecomendCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1027,11 +1037,28 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NGA/Classes/Other(其他)/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/DACircularProgress\"",
+					"\"${PODS_ROOT}/Headers/Public/JSQMessagesViewController\"",
+					"\"${PODS_ROOT}/Headers/Public/JSQSystemSoundPlayer\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/MMDrawerController\"",
+					"\"${PODS_ROOT}/Headers/Public/MWPhotoBrowser\"",
+					"\"${PODS_ROOT}/Headers/Public/SDCycleScrollView\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/ZYQAssetPickerController\"",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/NGA/Classes/Other(其他)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eorin.NGA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Debug;
 		};
@@ -1043,11 +1070,28 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NGA/Classes/Other(其他)/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/DACircularProgress\"",
+					"\"${PODS_ROOT}/Headers/Public/JSQMessagesViewController\"",
+					"\"${PODS_ROOT}/Headers/Public/JSQSystemSoundPlayer\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/MMDrawerController\"",
+					"\"${PODS_ROOT}/Headers/Public/MWPhotoBrowser\"",
+					"\"${PODS_ROOT}/Headers/Public/SDCycleScrollView\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/ZYQAssetPickerController\"",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/NGA/Classes/Other(其他)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eorin.NGA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Release;
 		};

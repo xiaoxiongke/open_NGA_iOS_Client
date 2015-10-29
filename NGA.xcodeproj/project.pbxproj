@@ -10,8 +10,6 @@
 		550078F21BE05BEE00CFD781 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 550078F11BE05BEE00CFD781 /* UIBarButtonItem+Extension.m */; };
 		550079001BE0616B00CFD781 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 550078F31BE0616B00CFD781 /* Foundation+Log.m */; };
 		5506B9911BE0E37000299633 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5506B9901BE0E37000299633 /* UIView+Extension.m */; };
-		5506B9941BE0E63700299633 /* SMMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5506B9931BE0E63700299633 /* SMMenuCell.m */; };
-		5506B9971BE0E9DD00299633 /* SMMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5506B9961BE0E9DD00299633 /* SMMenuItem.m */; };
 		5506B99E1BE0F5E500299633 /* SMForumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5506B99D1BE0F5E500299633 /* SMForumViewController.m */; };
 		5506B9A11BE0F60800299633 /* SMMissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5506B9A01BE0F60800299633 /* SMMissionViewController.m */; };
 		5506B9A41BE0F61400299633 /* SMShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5506B9A31BE0F61400299633 /* SMShopViewController.m */; };
@@ -21,6 +19,14 @@
 		5533D76A1BE06D8D0005D0E3 /* SMHomeNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5533D7691BE06D8D0005D0E3 /* SMHomeNavViewController.m */; };
 		553DEC7B1BE0BD3E0084C789 /* SMLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 553DEC7A1BE0BD3E0084C789 /* SMLeftView.m */; };
 		553DEC7D1BE0BD5A0084C789 /* SMLeftView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 553DEC7C1BE0BD5A0084C789 /* SMLeftView.xib */; };
+		557AFD591BE1CF9900E97235 /* SMItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 557AFD581BE1CF9900E97235 /* SMItemCell.m */; };
+		557AFD5C1BE1CFC100E97235 /* SMItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 557AFD5B1BE1CFC100E97235 /* SMItem.m */; };
+		557AFD5F1BE1D17500E97235 /* SMNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 557AFD5E1BE1D17500E97235 /* SMNormalCell.m */; };
+		557AFD621BE1D18500E97235 /* SMSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 557AFD611BE1D18500E97235 /* SMSwitchCell.m */; };
+		557AFD651BE1D19100E97235 /* SMLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 557AFD641BE1D19100E97235 /* SMLabelCell.m */; };
+		557AFD681BE1D24600E97235 /* SMNormalItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 557AFD671BE1D24600E97235 /* SMNormalItem.m */; };
+		557AFD6E1BE1D25C00E97235 /* SMLabelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 557AFD6D1BE1D25C00E97235 /* SMLabelItem.m */; };
+		557AFD711BE1D2F200E97235 /* SMSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 557AFD701BE1D2F200E97235 /* SMSwitchItem.m */; };
 		55CAA24A1BE04FB30057A058 /* SMHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CAA22F1BE04FB30057A058 /* SMHomeViewController.m */; };
 		55CAA24B1BE04FB30057A058 /* SMLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CAA2351BE04FB30057A058 /* SMLeftMenuViewController.m */; };
 		55CAA25D1BE051F60057A058 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CAA2551BE051F60057A058 /* AppDelegate.m */; };
@@ -31,14 +37,10 @@
 		55CAA2621BE051F60057A058 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CAA25C1BE051F60057A058 /* main.m */; };
 		55D41F6F1BE1143E00CF9DF0 /* SMLeftNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D41F6E1BE1143E00CF9DF0 /* SMLeftNavController.m */; };
 		55D41F721BE1151100CF9DF0 /* MMExampleDrawerVisualStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D41F711BE1151100CF9DF0 /* MMExampleDrawerVisualStateManager.m */; };
-		55D41F751BE128B100CF9DF0 /* SMSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D41F741BE128B100CF9DF0 /* SMSettingCell.m */; };
-		55D41F7B1BE12A5100CF9DF0 /* SMSettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D41F7A1BE12A5100CF9DF0 /* SMSettingItem.m */; };
 		55D41F7E1BE12BE100CF9DF0 /* SMAccountManaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D41F7D1BE12BE100CF9DF0 /* SMAccountManaController.m */; };
 		55D41F811BE12C0700CF9DF0 /* SMChangePwdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D41F801BE12C0700CF9DF0 /* SMChangePwdController.m */; };
 		55D41F841BE12C1700CF9DF0 /* SMChatSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D41F831BE12C1700CF9DF0 /* SMChatSettingController.m */; };
 		55D41F871BE12C3500CF9DF0 /* SMAboutUsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D41F861BE12C3500CF9DF0 /* SMAboutUsController.m */; };
-		55D41F8A1BE12ED900CF9DF0 /* SMSettingLabelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D41F891BE12ED900CF9DF0 /* SMSettingLabelItem.m */; };
-		55D41F8D1BE12F6B00CF9DF0 /* SMSettingLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D41F8C1BE12F6B00CF9DF0 /* SMSettingLabelCell.m */; };
 		55D41F901BE1313400CF9DF0 /* SMSettingGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D41F8F1BE1313400CF9DF0 /* SMSettingGroup.m */; };
 		55F3C3561BDFB08E00836D4D /* NGATests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3C3551BDFB08E00836D4D /* NGATests.m */; };
 		55F3C3611BDFB08E00836D4D /* NGAUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3C3601BDFB08E00836D4D /* NGAUITests.m */; };
@@ -69,10 +71,6 @@
 		550078F31BE0616B00CFD781 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		5506B98F1BE0E37000299633 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		5506B9901BE0E37000299633 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
-		5506B9921BE0E63700299633 /* SMMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMMenuCell.h; sourceTree = "<group>"; };
-		5506B9931BE0E63700299633 /* SMMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMMenuCell.m; sourceTree = "<group>"; };
-		5506B9951BE0E9DD00299633 /* SMMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMMenuItem.h; sourceTree = "<group>"; };
-		5506B9961BE0E9DD00299633 /* SMMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMMenuItem.m; sourceTree = "<group>"; };
 		5506B9981BE0F0E900299633 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		5506B99C1BE0F5E500299633 /* SMForumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMForumViewController.h; path = "../../BBS(论坛) /Controllers/SMForumViewController.h"; sourceTree = "<group>"; };
 		5506B99D1BE0F5E500299633 /* SMForumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMForumViewController.m; path = "../../BBS(论坛) /Controllers/SMForumViewController.m"; sourceTree = "<group>"; };
@@ -91,6 +89,22 @@
 		553DEC791BE0BD3E0084C789 /* SMLeftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMLeftView.h; sourceTree = "<group>"; };
 		553DEC7A1BE0BD3E0084C789 /* SMLeftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMLeftView.m; sourceTree = "<group>"; };
 		553DEC7C1BE0BD5A0084C789 /* SMLeftView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMLeftView.xib; sourceTree = "<group>"; };
+		557AFD571BE1CF9900E97235 /* SMItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMItemCell.h; sourceTree = "<group>"; };
+		557AFD581BE1CF9900E97235 /* SMItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMItemCell.m; sourceTree = "<group>"; };
+		557AFD5A1BE1CFC100E97235 /* SMItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMItem.h; sourceTree = "<group>"; };
+		557AFD5B1BE1CFC100E97235 /* SMItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMItem.m; sourceTree = "<group>"; };
+		557AFD5D1BE1D17500E97235 /* SMNormalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMNormalCell.h; sourceTree = "<group>"; };
+		557AFD5E1BE1D17500E97235 /* SMNormalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMNormalCell.m; sourceTree = "<group>"; };
+		557AFD601BE1D18500E97235 /* SMSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSwitchCell.h; sourceTree = "<group>"; };
+		557AFD611BE1D18500E97235 /* SMSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSwitchCell.m; sourceTree = "<group>"; };
+		557AFD631BE1D19100E97235 /* SMLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMLabelCell.h; sourceTree = "<group>"; };
+		557AFD641BE1D19100E97235 /* SMLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMLabelCell.m; sourceTree = "<group>"; };
+		557AFD661BE1D24600E97235 /* SMNormalItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMNormalItem.h; sourceTree = "<group>"; };
+		557AFD671BE1D24600E97235 /* SMNormalItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMNormalItem.m; sourceTree = "<group>"; };
+		557AFD6C1BE1D25C00E97235 /* SMLabelItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMLabelItem.h; sourceTree = "<group>"; };
+		557AFD6D1BE1D25C00E97235 /* SMLabelItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMLabelItem.m; sourceTree = "<group>"; };
+		557AFD6F1BE1D2F200E97235 /* SMSwitchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSwitchItem.h; sourceTree = "<group>"; };
+		557AFD701BE1D2F200E97235 /* SMSwitchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSwitchItem.m; sourceTree = "<group>"; };
 		55CAA22E1BE04FB30057A058 /* SMHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMHomeViewController.h; path = ../SMHomeViewController.h; sourceTree = "<group>"; };
 		55CAA22F1BE04FB30057A058 /* SMHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMHomeViewController.m; path = ../SMHomeViewController.m; sourceTree = "<group>"; };
 		55CAA2341BE04FB30057A058 /* SMLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMLeftMenuViewController.h; path = ../SMLeftMenuViewController.h; sourceTree = "<group>"; };
@@ -106,10 +120,6 @@
 		55D41F6E1BE1143E00CF9DF0 /* SMLeftNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMLeftNavController.m; sourceTree = "<group>"; };
 		55D41F701BE1151100CF9DF0 /* MMExampleDrawerVisualStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMExampleDrawerVisualStateManager.h; sourceTree = "<group>"; };
 		55D41F711BE1151100CF9DF0 /* MMExampleDrawerVisualStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMExampleDrawerVisualStateManager.m; sourceTree = "<group>"; };
-		55D41F731BE128B100CF9DF0 /* SMSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSettingCell.h; sourceTree = "<group>"; };
-		55D41F741BE128B100CF9DF0 /* SMSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSettingCell.m; sourceTree = "<group>"; };
-		55D41F791BE12A5100CF9DF0 /* SMSettingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSettingItem.h; sourceTree = "<group>"; };
-		55D41F7A1BE12A5100CF9DF0 /* SMSettingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSettingItem.m; sourceTree = "<group>"; };
 		55D41F7C1BE12BE100CF9DF0 /* SMAccountManaController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAccountManaController.h; sourceTree = "<group>"; };
 		55D41F7D1BE12BE100CF9DF0 /* SMAccountManaController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMAccountManaController.m; sourceTree = "<group>"; };
 		55D41F7F1BE12C0700CF9DF0 /* SMChangePwdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMChangePwdController.h; sourceTree = "<group>"; };
@@ -118,10 +128,6 @@
 		55D41F831BE12C1700CF9DF0 /* SMChatSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMChatSettingController.m; sourceTree = "<group>"; };
 		55D41F851BE12C3500CF9DF0 /* SMAboutUsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAboutUsController.h; sourceTree = "<group>"; };
 		55D41F861BE12C3500CF9DF0 /* SMAboutUsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMAboutUsController.m; sourceTree = "<group>"; };
-		55D41F881BE12ED900CF9DF0 /* SMSettingLabelItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSettingLabelItem.h; sourceTree = "<group>"; };
-		55D41F891BE12ED900CF9DF0 /* SMSettingLabelItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSettingLabelItem.m; sourceTree = "<group>"; };
-		55D41F8B1BE12F6B00CF9DF0 /* SMSettingLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSettingLabelCell.h; sourceTree = "<group>"; };
-		55D41F8C1BE12F6B00CF9DF0 /* SMSettingLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSettingLabelCell.m; sourceTree = "<group>"; };
 		55D41F8E1BE1313400CF9DF0 /* SMSettingGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSettingGroup.h; sourceTree = "<group>"; };
 		55D41F8F1BE1313400CF9DF0 /* SMSettingGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSettingGroup.m; sourceTree = "<group>"; };
 		55F3C3381BDFB08E00836D4D /* NGA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NGA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -308,14 +314,16 @@
 		55CAA2331BE04FB30057A058 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5506B9951BE0E9DD00299633 /* SMMenuItem.h */,
-				5506B9961BE0E9DD00299633 /* SMMenuItem.m */,
-				55D41F791BE12A5100CF9DF0 /* SMSettingItem.h */,
-				55D41F7A1BE12A5100CF9DF0 /* SMSettingItem.m */,
-				55D41F881BE12ED900CF9DF0 /* SMSettingLabelItem.h */,
-				55D41F891BE12ED900CF9DF0 /* SMSettingLabelItem.m */,
 				55D41F8E1BE1313400CF9DF0 /* SMSettingGroup.h */,
 				55D41F8F1BE1313400CF9DF0 /* SMSettingGroup.m */,
+				557AFD5A1BE1CFC100E97235 /* SMItem.h */,
+				557AFD5B1BE1CFC100E97235 /* SMItem.m */,
+				557AFD661BE1D24600E97235 /* SMNormalItem.h */,
+				557AFD671BE1D24600E97235 /* SMNormalItem.m */,
+				557AFD6C1BE1D25C00E97235 /* SMLabelItem.h */,
+				557AFD6D1BE1D25C00E97235 /* SMLabelItem.m */,
+				557AFD6F1BE1D2F200E97235 /* SMSwitchItem.h */,
+				557AFD701BE1D2F200E97235 /* SMSwitchItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -326,12 +334,14 @@
 				553DEC791BE0BD3E0084C789 /* SMLeftView.h */,
 				553DEC7A1BE0BD3E0084C789 /* SMLeftView.m */,
 				553DEC7C1BE0BD5A0084C789 /* SMLeftView.xib */,
-				5506B9921BE0E63700299633 /* SMMenuCell.h */,
-				5506B9931BE0E63700299633 /* SMMenuCell.m */,
-				55D41F731BE128B100CF9DF0 /* SMSettingCell.h */,
-				55D41F741BE128B100CF9DF0 /* SMSettingCell.m */,
-				55D41F8B1BE12F6B00CF9DF0 /* SMSettingLabelCell.h */,
-				55D41F8C1BE12F6B00CF9DF0 /* SMSettingLabelCell.m */,
+				557AFD571BE1CF9900E97235 /* SMItemCell.h */,
+				557AFD581BE1CF9900E97235 /* SMItemCell.m */,
+				557AFD5D1BE1D17500E97235 /* SMNormalCell.h */,
+				557AFD5E1BE1D17500E97235 /* SMNormalCell.m */,
+				557AFD601BE1D18500E97235 /* SMSwitchCell.h */,
+				557AFD611BE1D18500E97235 /* SMSwitchCell.m */,
+				557AFD631BE1D19100E97235 /* SMLabelCell.h */,
+				557AFD641BE1D19100E97235 /* SMLabelCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -660,13 +670,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55D41F751BE128B100CF9DF0 /* SMSettingCell.m in Sources */,
 				5506B9A11BE0F60800299633 /* SMMissionViewController.m in Sources */,
 				5506B9911BE0E37000299633 /* UIView+Extension.m in Sources */,
 				55CAA24B1BE04FB30057A058 /* SMLeftMenuViewController.m in Sources */,
+				557AFD591BE1CF9900E97235 /* SMItemCell.m in Sources */,
+				557AFD681BE1D24600E97235 /* SMNormalItem.m in Sources */,
 				5506B99E1BE0F5E500299633 /* SMForumViewController.m in Sources */,
 				550078F21BE05BEE00CFD781 /* UIBarButtonItem+Extension.m in Sources */,
-				55D41F8A1BE12ED900CF9DF0 /* SMSettingLabelItem.m in Sources */,
 				5506B9AA1BE0F65300299633 /* SMScanViewController.m in Sources */,
 				55CAA24A1BE04FB30057A058 /* SMHomeViewController.m in Sources */,
 				55CAA2621BE051F60057A058 /* main.m in Sources */,
@@ -674,19 +684,21 @@
 				5506B9A41BE0F61400299633 /* SMShopViewController.m in Sources */,
 				550079001BE0616B00CFD781 /* Foundation+Log.m in Sources */,
 				55D41F7E1BE12BE100CF9DF0 /* SMAccountManaController.m in Sources */,
-				55D41F8D1BE12F6B00CF9DF0 /* SMSettingLabelCell.m in Sources */,
 				5533D76A1BE06D8D0005D0E3 /* SMHomeNavViewController.m in Sources */,
+				557AFD711BE1D2F200E97235 /* SMSwitchItem.m in Sources */,
 				55D41F811BE12C0700CF9DF0 /* SMChangePwdController.m in Sources */,
 				55D41F721BE1151100CF9DF0 /* MMExampleDrawerVisualStateManager.m in Sources */,
 				553DEC7B1BE0BD3E0084C789 /* SMLeftView.m in Sources */,
-				5506B9941BE0E63700299633 /* SMMenuCell.m in Sources */,
 				5506B9A71BE0F63300299633 /* SMInviteViewController.m in Sources */,
 				5506B9B01BE0F67800299633 /* SMSettingViewController.m in Sources */,
 				55D41F901BE1313400CF9DF0 /* SMSettingGroup.m in Sources */,
+				557AFD5C1BE1CFC100E97235 /* SMItem.m in Sources */,
 				55D41F6F1BE1143E00CF9DF0 /* SMLeftNavController.m in Sources */,
-				5506B9971BE0E9DD00299633 /* SMMenuItem.m in Sources */,
+				557AFD621BE1D18500E97235 /* SMSwitchCell.m in Sources */,
 				55D41F841BE12C1700CF9DF0 /* SMChatSettingController.m in Sources */,
-				55D41F7B1BE12A5100CF9DF0 /* SMSettingItem.m in Sources */,
+				557AFD6E1BE1D25C00E97235 /* SMLabelItem.m in Sources */,
+				557AFD5F1BE1D17500E97235 /* SMNormalCell.m in Sources */,
+				557AFD651BE1D19100E97235 /* SMLabelCell.m in Sources */,
 				55D41F871BE12C3500CF9DF0 /* SMAboutUsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

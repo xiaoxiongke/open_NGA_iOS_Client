@@ -1,14 +1,14 @@
 //
-//  SMSettingLabelItem.h
+//  SMLabelItem.h
 //  NGA
 //
 //  Created by eorin on 15/10/29.
 //  Copyright © 2015年 eorin. All rights reserved.
 //
 
-#import "SMMenuItem.h"
+#import "SMItem.h"
 
-@interface SMSettingLabelItem : SMMenuItem
+@interface SMLabelItem : SMItem
 
 
 @property (nonatomic, copy) NSString *rightLabelText;

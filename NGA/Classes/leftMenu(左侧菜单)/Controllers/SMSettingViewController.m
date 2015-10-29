@@ -7,15 +7,20 @@
 //
 
 #import "SMSettingViewController.h"
-#import "SMMenuItem.h"
-#import "SMSettingCell.h"
-#import "SMSettingItem.h"
+
+#import "SMNormalItem.h"
+#import "SMNormalCell.h"
+#import "SMSwitchCell.h"
+#import "SMSwitchItem.h"
+#import "SMLabelCell.h"
+#import "SMLabelItem.h"
+
 #import "SMAccountManaController.h"
 #import "SMAboutUsController.h"
 #import "SMChangePwdController.h"
 #import "SMChatSettingController.h"
-#import "SMSettingLabelCell.h"
-#import "SMSettingLabelItem.h"
+
+
 #import "SMSettingGroup.h"
 #import "UIBarButtonItem+Extension.h"
 
@@ -46,7 +51,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.contentInset = UIEdgeInsetsMake(-30, 0, 0, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
     
     self.title = @"设置";
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(showLeftMenu) image:@"index_drawerleft" highImage:nil];
@@ -70,15 +75,15 @@
 - (void)addGroup0
 {
     // 0组
-    SMMenuItem *accountMana = [SMMenuItem itemWithTitle:@"账号管理" destVcClass:[SMAccountManaController class]];
+    SMItem *accountMana = [SMNormalItem itemWithTitle:@"账号管理" destVcClass:[SMAccountManaController class]];
 
-    SMMenuItem *changPwd = [SMMenuItem itemWithTitle:@"修改密码" destVcClass:[SMChangePwdController class]];
+    SMItem *changPwd = [SMNormalItem itemWithTitle:@"修改密码" destVcClass:[SMChangePwdController class]];
     
-    SMSettingItem *openAlert = [SMSettingItem itemWithTitle:@"启用提醒"];
+    SMItem *openAlert = [SMSwitchItem itemWithTitle:@"启用提醒"];
     
-    SMSettingItem *receiveSystemAlert = [SMSettingItem itemWithTitle:@"接受系统消息提醒"];
+    SMItem *receiveSystemAlert = [SMSwitchItem itemWithTitle:@"接受系统消息提醒"];
     
-    SMMenuItem *chatSetting = [SMMenuItem itemWithTitle:@"聊天设置" destVcClass:[SMChatSettingController class]];
+    SMItem *chatSetting = [SMNormalItem itemWithTitle:@"聊天设置" destVcClass:[SMChatSettingController class]];
     
     
     SMSettingGroup *group0 = [[SMSettingGroup alloc] init];
@@ -94,15 +99,15 @@
 - (void)addGroup1
 {
     // 1组
-    SMSettingItem *noWifiShowIcon = [SMSettingItem itemWithTitle:@"非WiFi时显示用户头像"];
+    SMItem *noWifiShowIcon = [SMSwitchItem itemWithTitle:@"非WiFi时显示用户头像"];
     
-    SMSettingItem *noWifiShowImage = [SMSettingItem itemWithTitle:@"非WiFi时显示帖子图片"];
+    SMItem *noWifiShowImage = [SMSwitchItem itemWithTitle:@"非WiFi时显示帖子图片"];
     
-    SMSettingItem *showSign = [SMSettingItem itemWithTitle:@"签名"];
+    SMItem *showSign = [SMSwitchItem itemWithTitle:@"签名"];
     
-    SMSettingItem *nightMode = [SMSettingItem itemWithTitle:@"夜间模式"];
+    SMItem *nightMode = [SMSwitchItem itemWithTitle:@"夜间模式"];
     
-    SMSettingLabelItem *clearCache = [SMSettingLabelItem itemWithTitle:@"清除缓存" rightLabelText:@"888 MB"];
+    SMItem *clearCache = [SMLabelItem itemWithTitle:@"清除缓存" rightLabelText:@"888 MB"];
     
     clearCache.option = ^{
         
@@ -122,7 +127,7 @@
 - (void)addGroup2
 {
     // 2组
-    SMSettingItem *mark = [SMSettingItem itemWithTitle:@"评价评分"];
+    SMItem *mark = [SMNormalItem itemWithTitle:@"评价评分" destVcClass:nil];
     
     mark.option = ^{
     
@@ -130,7 +135,7 @@
     
     };
     
-    SMMenuItem *aboutUs = [SMMenuItem itemWithTitle:@"关于我们" destVcClass:[SMAboutUsController class]];
+    SMItem *aboutUs = [SMNormalItem itemWithTitle:@"关于我们" destVcClass:[SMAboutUsController class]];
     
     SMSettingGroup *group2 = [[SMSettingGroup alloc] init];
     group2.items = @[mark,aboutUs];
@@ -163,18 +168,41 @@
     return group.items.count;
 }
 
+//
+//
+//
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+// 
+//    // 创建cell
+//    SMNormalCell *cell = [[SMNormalCell class] cellWithTableView:tableView];
+//    
+//    // 取出模型
+//    SMSettingGroup *group = self.settingItems[indexPath.section];
+//    SMSwitchItem *item = group.items[indexPath.row];
+//    
+//    // 传递模型
+//    cell.item = item;
+//
+//    return cell;
+//}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    // 创建cell
-    SMSettingCell *cell = [[SMSettingCell class] cellWithTableView:tableView];
-    
+    // 定义唯一标识
+    static NSString *CellIdentifier = @"Cell";
+    // 通过indexPath创建cell实例 每一个cell都是单独的
+    SMNormalCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    // 判断为空进行初始化  --（当拉动页面显示超过主页面内容的时候就会重用之前的cell，而不会再次初始化）
+    if (!cell) {
+        cell = [[SMNormalCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+    }
     // 取出模型
     SMSettingGroup *group = self.settingItems[indexPath.section];
-    SMSettingItem *item = group.items[indexPath.row];
+    SMSwitchItem *item = group.items[indexPath.row];
     
-    NSLog(@"jkjkh");
     // 传递模型
     cell.item = item;
     

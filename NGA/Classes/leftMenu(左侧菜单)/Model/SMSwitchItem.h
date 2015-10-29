@@ -1,14 +1,14 @@
 //
-//  SMSettingItem.h
+//  SMSwitchItem.h
 //  NGA
 //
 //  Created by eorin on 15/10/29.
 //  Copyright © 2015年 eorin. All rights reserved.
 //
 
-#import "SMMenuItem.h"
+#import "SMItem.h"
 
-@interface SMSettingItem : SMMenuItem
+@interface SMSwitchItem : SMItem
 
 + (instancetype)itemWithTitle:(NSString *)title;
 

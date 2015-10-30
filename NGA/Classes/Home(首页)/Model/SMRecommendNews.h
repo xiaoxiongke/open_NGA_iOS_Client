@@ -50,7 +50,7 @@
 /**
  *  热门帖子配图
  */
-@property (nonatomic, strong) NSURL *thread_icon;
+@property (nonatomic,copy) NSString *thread_icon;
 
 /**
  *  帖子发布时间

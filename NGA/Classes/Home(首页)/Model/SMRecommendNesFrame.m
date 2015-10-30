@@ -29,28 +29,24 @@
     CGFloat titleX = SMRecommendCellMargin;
     CGFloat titleY = SMRecommendCellMargin;
     CGFloat titleW = SMScreenW - 2*SMRecommendCellMargin;
-
     NSDictionary *attrs =  @{NSFontAttributeName:SMTitleFont};
-//    CGSize titleSize = [_recommendNews.titleText sizeWithAttributes:attrs];
-    
-    
-    CGRect titleRect = [_recommendNews.subject boundingRectWithSize:CGSizeMake(titleW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil];
 
-//    _titleFrame = (CGRect){{titleX,titleY},titleSize};
+    CGRect titleRect = [_recommendNews.subject boundingRectWithSize:CGSizeMake(titleW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil];
+    titleRect.origin.x = titleX;
+    titleRect.origin.y = titleY;
     _titleFrame = titleRect;
 
     
     // 作者icon
     CGFloat iconX = titleX;
-    CGFloat iconY = titleY + SMRecommendCellMargin;
+    CGFloat iconY = titleY + titleRect.size.height + SMRecommendCellMargin;
     CGFloat iconWH = 20;
     _userIconFrame = CGRectMake(iconX, iconY, iconWH, iconWH);
-    
-    
+
     // 作者名称
     
-    CGFloat nameX = iconX + SMRecommendCellMargin;
-    CGFloat nameY = iconY + iconWH *0.5;
+    CGFloat nameX = iconX + iconWH +SMRecommendCellMargin;
+    CGFloat nameY = iconY + iconWH *0.25;
     NSDictionary *nameDict = [NSDictionary dictionary];
     
     nameDict = @{NSFontAttributeName:SMNameFont};
@@ -58,63 +54,69 @@
     _nameFrame = (CGRect){{nameX,nameY},nameSize};
     
     // 时间icon
-    
-    CGFloat timeIconX = nameX + SMRecommendCellMargin;
+    CGFloat timeIconX = nameX + nameSize.width + SMRecommendCellMargin;
     CGFloat timeIconY = iconY;
-    CGFloat timeIconWH = 20;
+    CGFloat timeIconWH = iconWH;
     _timeIconFrame = CGRectMake(timeIconX, timeIconY, timeIconWH, timeIconWH);
-    
     
     // 时间label
     
-    CGFloat timeLabelX = timeIconX + SMRecommendCellMargin;
+    CGFloat timeLabelX = timeIconX + timeIconWH + SMRecommendCellMargin;
     CGFloat timeLabelY = nameY;
-    NSDictionary *timeDict = [NSDictionary dictionary];
-    
-    timeDict = @{NSFontAttributeName:SMNameFont};
-    CGSize timeLabelSize = [_recommendNews.postdate sizeWithAttributes:timeDict];
+    CGSize  timeLabelSize = [_recommendNews.postdate sizeWithFont:SMTimeFont];
+//    
+//    timeRect.origin.x = timeLabelX;
+//    timeRect.origin.y = timeLabelY;
     _timeLabelFrame = (CGRect){{timeLabelX,timeLabelY},timeLabelSize};
     
     // 配图
     
-    CGFloat picX = SMRecommendCellMargin;
-    CGFloat picY = iconY + SMRecommendCellMargin;
-    CGFloat picW = SMScreenW - 2*SMRecommendCellMargin;
-    CGFloat picH = SMPicHeight;
-    _picFrame = CGRectMake(picX, picY, picW, picH);
+    if (_recommendNews.thread_icon.length) {
+        CGFloat picX = SMRecommendCellMargin;
+        CGFloat picY = iconY + iconWH +SMRecommendCellMargin;
+        CGFloat picW = SMScreenW - 2*SMRecommendCellMargin;
+        CGFloat picH = SMPicHeight;
+        _picFrame = CGRectMake(picX, picY, picW, picH);
+    }else{
+        
+        _picFrame = CGRectMake(SMRecommendCellMargin, iconY +iconWH, 0, 0);
     
-//    // 如果有配图
-//        
-//        CGFloat picX = SMRecommendCellMargin;
-//        CGFloat picY = iconY + SMRecommendCellMargin;
-//        CGFloat picW = SMScreenW - 2*SMRecommendCellMargin;
-//        CGFloat picH = SMPicHeight;
-//        _picFrame = CGRectMake(picX, picY, picW, picH);
-
+    }
     
     // 正文
         // 如果有配图
         if (_recommendNews.thread_icon) {
     
-            CGFloat textLabelX = SMRecommendCellMargin;
-            CGFloat textLabelY = CGRectGetMaxY(_picFrame)  + SMRecommendCellMargin;
+
             NSDictionary *textDict = [NSDictionary dictionary];
             
             textDict = @{NSFontAttributeName:SMContentTextFont};
-            CGSize textLabelSize = [_recommendNews.thread_abstract sizeWithAttributes:textDict];
-            _contentFrame = (CGRect){{textLabelX,textLabelY},textLabelSize};
+//            CGSize textLabelSize = [_recommendNews.thread_abstract sizeWithAttributes:textDict];
+//            _contentFrame = (CGRect){{textLabelX,textLabelY},textLabelSize};
+            
+            
+            CGRect textLabelRect = [_recommendNews.thread_abstract boundingRectWithSize:CGSizeMake(SMScreenW - 2*SMRecommendCellMargin, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:textDict context:nil];
+            CGFloat textLabelX = SMRecommendCellMargin;
+            CGFloat textLabelY = CGRectGetMaxY(_picFrame)  + SMRecommendCellMargin;
+            textLabelRect.origin.x = textLabelX;
+            textLabelRect.origin.y = textLabelY;
+            _contentFrame = textLabelRect;
     
         }
         // 没有配图
         else {
             
             CGFloat textLabelX = SMRecommendCellMargin;
-            CGFloat textLabelY = iconY + SMRecommendCellMargin;
-            NSDictionary *textDict = [NSDictionary dictionary];
+            CGFloat textLabelY = iconY + iconWH + SMRecommendCellMargin;
+            NSDictionary *contentDict = [NSDictionary dictionary];
             
-            textDict = @{NSFontAttributeName:SMContentTextFont};
-            CGSize textLabelSize = [_recommendNews.thread_abstract sizeWithAttributes:textDict];
-            _contentFrame = (CGRect){{textLabelX,textLabelY},textLabelSize};
+            contentDict = @{NSFontAttributeName:SMContentTextFont};
+            CGRect textLabelRect = [_recommendNews.thread_abstract boundingRectWithSize:CGSizeMake(SMScreenW - 2*SMRecommendCellMargin, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:contentDict context:nil];
+            
+            textLabelRect.origin.x = textLabelX;
+            textLabelRect.origin.y = textLabelY;
+            _contentFrame = textLabelRect;
+
             
         }
 

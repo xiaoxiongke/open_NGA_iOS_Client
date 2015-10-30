@@ -12,19 +12,45 @@
 @interface SMNewsParam : NSObject
 
 /**
- *  采用OAuth授权方式为必填参数,访问命令牌
+ *  访问命令牌
  */
 @property (nonatomic, copy) NSString *access_token;
 
 /**
- *  若指定此参数，则返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0。
+ *  访客命令牌
  */
-@property (nonatomic, copy) NSString *since_id;
+@property (nonatomic, copy) NSString *guest_token;
 
 /**
- *  若指定此参数，则返回ID小于或等于max_id的微博，默认为0。
+ *  总页数
  */
-@property (nonatomic, copy) NSString *max_id;
+@property (nonatomic, assign) NSNumber * totalPage;
 
+/**
+ *  当前页数，默认加载第1页。
+ */
+@property (nonatomic, assign) NSNumber *currentPage;
+
+/**
+ *  操作成功
+ */
+@property (nonatomic, copy) NSString *msg;
+
+/**
+ *  code。
+ */
+@property (nonatomic, assign) NSNumber * code;
+
+
+/**
+ *  每页显示个数。
+ */
+@property (nonatomic, assign) NSNumber * perPage;
+
+/**
+ *  __ngaClientChecksum //取值为 md5(当前用户数字uid+认证码+当前时间戳)+当前时间戳
+。
+ */
+@property (nonatomic, copy) NSString *__ngaClientChecksum;
 
 @end

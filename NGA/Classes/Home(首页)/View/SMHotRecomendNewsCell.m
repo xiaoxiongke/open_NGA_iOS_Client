@@ -30,7 +30,7 @@
 
 
 // 时间icon
-@property (nonatomic, weak) UIImageView *timeIconView;
+@property (nonatomic, weak) UIButton *timeIconView;
 
 // 配图
 @property (nonatomic, weak) UIImageView *pic;
@@ -92,17 +92,16 @@
     // 时间
 
     UILabel *timeView = [[UILabel alloc] init];
-    timeView.font = SMTitleFont;
-    timeView.textColor = [UIColor orangeColor];
+    timeView.font = SMTimeFont;
     [self addSubview:timeView];
     _timeView = timeView;
     
     
     // 时间icon
 
-    UIImageView *timeIcon = [[UIImageView alloc] init];
+    UIButton *timeIcon = [[UIButton alloc] init];
     [self addSubview:timeIcon];
-    _iconView = timeIcon;
+    _timeIconView = timeIcon;
     
     // 配图
 
@@ -176,15 +175,20 @@
     
     // 标题
     _titleView.text = news.subject;
-    
+
     // 时间icon
-    _timeIconView.image = [UIImage imageNamed:@"recommend_postdate"];
-    
+    [_timeIconView setBackgroundImage:[UIImage imageNamed:@"recommend_postdate"]forState:UIControlStateNormal];
+    _timeIconView.userInteractionEnabled = NO;
     // 时间label
     _timeView.text = news.postdate;
     
     // 配图
-    [_pic sd_setImageWithURL:news.thread_icon placeholderImage:[UIImage imageNamed:@"recommend_loading_listimage"]];
+    if (_recommendF.recommendNews.thread_icon.length) {
+        NSURL *url = [NSURL URLWithString:_recommendF.recommendNews.thread_icon];
+        [_pic sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"recommend_loading_listimage"]];
+
+    }
+    
     // 正文
     _textView.text = news.thread_abstract;
 

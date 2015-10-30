@@ -18,15 +18,17 @@
 #define SMGlobleColor SMColor(255, 251, 233)
 #import "MMDrawerController.h"
 #import "UIViewController+MMDrawerController.h"
+#import "UIView+Extension.h"
+
 
 #define SMRecommendCellMargin 10
-#define SMTitleFont [UIFont systemFontOfSize:15]
-#define SMNameFont [UIFont systemFontOfSize:12]
+#define SMTitleFont [UIFont systemFontOfSize:14]
+#define SMNameFont [UIFont systemFontOfSize:10]
 #define SMTimeFont SMNameFont
-#define SMContentTextFont [UIFont systemFontOfSize:14]
+#define SMContentTextFont [UIFont systemFontOfSize:12]
 
 #define SMScreenW [UIScreen mainScreen].bounds.size.width
-#define SMPicHeight 150
+#define SMPicHeight 100
 
 
 // ...表示宏定义的可变参数

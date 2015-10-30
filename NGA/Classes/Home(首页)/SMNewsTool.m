@@ -25,9 +25,6 @@
     SMNewsParam *param = [[SMNewsParam alloc] init];
     SMAccount *account = [SMAccountTool account];
     param.access_token = account.access_token;
-    if (sinceId) { // 有微博数据，才需要下拉刷新
-        param.since_id = sinceId;
-    }
     
     [SMHttpTool Post:@"http://bbs.nga.cn/app_api.php?__lib=home&__act=bannerrecm" parameters:param.keyValues success:^(id responseObject) {
         
@@ -66,10 +63,7 @@
     // 创建参数模型
     SMNewsParam *param = [[SMNewsParam alloc] init];
     param.access_token = [SMAccountTool account].access_token;
-    if (maxId) { // 有微博数据，才需要下拉刷新
-        param.max_id = maxId;
-        
-    }
+
     
     [SMHttpTool Post:@"http://bbs.nga.cn/app_api.php?__lib=home&__act=recmthreads" parameters:param.keyValues success:^(id responseObject) { // HttpTool请求成功的回调
             // 请求成功代码先保存

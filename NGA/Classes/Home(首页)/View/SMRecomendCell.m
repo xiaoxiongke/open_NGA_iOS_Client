@@ -11,6 +11,7 @@
 @implementation SMRecomendCell
 
 
+
 + (instancetype)cellWithTableView:(UITableView *)tableView{
 
     return [[[NSBundle mainBundle] loadNibNamed:@"SMRecomendCell" owner:nil options:nil] lastObject];

@@ -19,5 +19,27 @@
 #import "MMDrawerController.h"
 #import "UIViewController+MMDrawerController.h"
 
+#define SMRecommendCellMargin 10
+#define SMTitleFont [UIFont systemFontOfSize:15]
+#define SMNameFont [UIFont systemFontOfSize:12]
+#define SMTimeFont SMNameFont
+#define SMContentTextFont [UIFont systemFontOfSize:14]
+
+#define SMScreenW [UIScreen mainScreen].bounds.size.width
+#define SMPicHeight 150
+
+
+// ...表示宏定义的可变参数
+// __VA_ARGS__:表示函数里面的可变参数
+#ifdef DEBUG // 调试
+
+#define SMLog(...) NSLog(__VA_ARGS__)
+
+#else // 发布
+
+#define SMLog(...)
+
+#endif
+
 
 #endif /* PrefixHeader_pch */

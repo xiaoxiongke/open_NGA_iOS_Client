@@ -15,21 +15,33 @@
 // 自定义颜色
 #define SMColor(r,g,b)  [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
 // 全局颜色
-#define SMGlobleColor SMColor(255, 251, 233)
+#define SMGlobleColor SMColor(254, 237, 192)
+
+
+
 #import "MMDrawerController.h"
 #import "UIViewController+MMDrawerController.h"
 #import "UIView+Extension.h"
 
-
+// cell设置
 #define SMRecommendCellMargin 10
+#define SMPicHeight 100
+
+
+// 文字设置
 #define SMTitleFont [UIFont systemFontOfSize:14]
 #define SMNameFont [UIFont systemFontOfSize:10]
 #define SMTimeFont SMNameFont
 #define SMContentTextFont [UIFont systemFontOfSize:12]
+#define SMForumListFontColor SMColor(110, 32, 13)
+#define SMTitleFontColor SMColor(16, 23, 32)
+#define SMContentFontColor SMColor(15, 29, 49)
 
+// 屏幕设置
 #define SMScreenW [UIScreen mainScreen].bounds.size.width
-#define SMPicHeight 100
 
+
+#define SMNotificationCenter [NSNotificationCenter defaultCenter]
 
 // ...表示宏定义的可变参数
 // __VA_ARGS__:表示函数里面的可变参数

@@ -25,7 +25,6 @@
 #import "UIBarButtonItem+Extension.h"
 
 
-
 @interface SMSettingViewController ()
 
 @property (nonatomic,strong)NSMutableArray *settingItems;

@@ -36,6 +36,10 @@
 		559AD4F91BE2672D005F4B84 /* SMNewsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 559AD4F81BE2672D005F4B84 /* SMNewsResult.m */; };
 		55A4A0D81BE316FE0003BBBD /* SMUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A4A0D71BE316FE0003BBBD /* SMUser.m */; };
 		55A4A0DB1BE348760003BBBD /* NSDate+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A4A0DA1BE348760003BBBD /* NSDate+MJ.m */; };
+		55A4A0DE1BE373300003BBBD /* SMForumListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A4A0DD1BE373300003BBBD /* SMForumListController.m */; };
+		55A4A0E11BE37E380003BBBD /* SMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A4A0E01BE37E380003BBBD /* SMTestViewController.m */; };
+		55A4A0E51BE38F380003BBBD /* test.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55A4A0E41BE38F380003BBBD /* test.xib */; };
+		55A4A0E81BE394AA0003BBBD /* SMConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A4A0E71BE394AA0003BBBD /* SMConst.m */; };
 		55CAA24A1BE04FB30057A058 /* SMHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CAA22F1BE04FB30057A058 /* SMHomeViewController.m */; };
 		55CAA24B1BE04FB30057A058 /* SMLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CAA2351BE04FB30057A058 /* SMLeftMenuViewController.m */; };
 		55CAA25D1BE051F60057A058 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CAA2551BE051F60057A058 /* AppDelegate.m */; };
@@ -60,6 +64,7 @@
 		55FAF1181BE256290049121A /* SMAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FAF1171BE256290049121A /* SMAccount.m */; };
 		55FAF11B1BE25CBD0049121A /* SMAccountParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FAF11A1BE25CBD0049121A /* SMAccountParam.m */; };
 		55FAF11E1BE25F220049121A /* SMuploadParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FAF11D1BE25F220049121A /* SMuploadParam.m */; };
+		55FC28C91BE474D800B287E1 /* SMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FC28C81BE474D800B287E1 /* SMMainViewController.m */; };
 		99424186F3240FF10E9C3A45 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C41D7224923F7D16D0E09EDD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +142,13 @@
 		55A4A0D71BE316FE0003BBBD /* SMUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMUser.m; sourceTree = "<group>"; };
 		55A4A0D91BE348760003BBBD /* NSDate+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+MJ.h"; sourceTree = "<group>"; };
 		55A4A0DA1BE348760003BBBD /* NSDate+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MJ.m"; sourceTree = "<group>"; };
+		55A4A0DC1BE373300003BBBD /* SMForumListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMForumListController.h; sourceTree = "<group>"; };
+		55A4A0DD1BE373300003BBBD /* SMForumListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMForumListController.m; sourceTree = "<group>"; };
+		55A4A0DF1BE37E380003BBBD /* SMTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTestViewController.h; sourceTree = "<group>"; };
+		55A4A0E01BE37E380003BBBD /* SMTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTestViewController.m; sourceTree = "<group>"; };
+		55A4A0E41BE38F380003BBBD /* test.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = test.xib; sourceTree = "<group>"; };
+		55A4A0E61BE394AA0003BBBD /* SMConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMConst.h; sourceTree = "<group>"; };
+		55A4A0E71BE394AA0003BBBD /* SMConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMConst.m; sourceTree = "<group>"; };
 		55CAA22E1BE04FB30057A058 /* SMHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMHomeViewController.h; path = ../SMHomeViewController.h; sourceTree = "<group>"; };
 		55CAA22F1BE04FB30057A058 /* SMHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMHomeViewController.m; path = ../SMHomeViewController.m; sourceTree = "<group>"; };
 		55CAA2341BE04FB30057A058 /* SMLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMLeftMenuViewController.h; path = ../SMLeftMenuViewController.h; sourceTree = "<group>"; };
@@ -182,6 +194,8 @@
 		55FAF11A1BE25CBD0049121A /* SMAccountParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMAccountParam.m; sourceTree = "<group>"; };
 		55FAF11C1BE25F220049121A /* SMuploadParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMuploadParam.h; sourceTree = "<group>"; };
 		55FAF11D1BE25F220049121A /* SMuploadParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMuploadParam.m; sourceTree = "<group>"; };
+		55FC28C71BE474D800B287E1 /* SMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMMainViewController.h; sourceTree = "<group>"; };
+		55FC28C81BE474D800B287E1 /* SMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMMainViewController.m; sourceTree = "<group>"; };
 		605CC697B9725859877C17CF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		763871C3794F5F566589C5E9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C41D7224923F7D16D0E09EDD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -492,6 +506,11 @@
 				55CAA22F1BE04FB30057A058 /* SMHomeViewController.m */,
 				5533D7681BE06D8D0005D0E3 /* SMHomeNavViewController.h */,
 				5533D7691BE06D8D0005D0E3 /* SMHomeNavViewController.m */,
+				55A4A0DC1BE373300003BBBD /* SMForumListController.h */,
+				55A4A0DD1BE373300003BBBD /* SMForumListController.m */,
+				55A4A0DF1BE37E380003BBBD /* SMTestViewController.h */,
+				55A4A0E01BE37E380003BBBD /* SMTestViewController.m */,
+				55A4A0E41BE38F380003BBBD /* test.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -631,6 +650,8 @@
 				55CAA25B1BE051F60057A058 /* Info.plist */,
 				55CAA25C1BE051F60057A058 /* main.m */,
 				5506B9981BE0F0E900299633 /* PrefixHeader.pch */,
+				55A4A0E61BE394AA0003BBBD /* SMConst.h */,
+				55A4A0E71BE394AA0003BBBD /* SMConst.m */,
 			);
 			path = "Other(其他)";
 			sourceTree = "<group>";
@@ -649,6 +670,8 @@
 		55CAA2641BE052070057A058 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				55FC28C71BE474D800B287E1 /* SMMainViewController.h */,
+				55FC28C81BE474D800B287E1 /* SMMainViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -859,6 +882,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55CAA2601BE051F60057A058 /* Main.storyboard in Resources */,
+				55A4A0E51BE38F380003BBBD /* test.xib in Resources */,
 				55CAA2611BE051F60057A058 /* Info.plist in Resources */,
 				553DEC7D1BE0BD5A0084C789 /* SMLeftView.xib in Resources */,
 				55CAA25F1BE051F60057A058 /* LaunchScreen.storyboard in Resources */,
@@ -938,6 +962,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55FAF11E1BE25F220049121A /* SMuploadParam.m in Sources */,
+				55A4A0DE1BE373300003BBBD /* SMForumListController.m in Sources */,
 				5506B9A11BE0F60800299633 /* SMMissionViewController.m in Sources */,
 				5506B9911BE0E37000299633 /* UIView+Extension.m in Sources */,
 				55CAA24B1BE04FB30057A058 /* SMLeftMenuViewController.m in Sources */,
@@ -954,8 +979,10 @@
 				55CAA2621BE051F60057A058 /* main.m in Sources */,
 				55CAA25D1BE051F60057A058 /* AppDelegate.m in Sources */,
 				552066A31BE1EAD30083A3F0 /* SMForumViewController.m in Sources */,
+				55A4A0E81BE394AA0003BBBD /* SMConst.m in Sources */,
 				5506B9A41BE0F61400299633 /* SMShopViewController.m in Sources */,
 				550079001BE0616B00CFD781 /* Foundation+Log.m in Sources */,
+				55A4A0E11BE37E380003BBBD /* SMTestViewController.m in Sources */,
 				55D41F7E1BE12BE100CF9DF0 /* SMAccountManaController.m in Sources */,
 				55FAF11B1BE25CBD0049121A /* SMAccountParam.m in Sources */,
 				5533D76A1BE06D8D0005D0E3 /* SMHomeNavViewController.m in Sources */,
@@ -979,6 +1006,7 @@
 				557AFD651BE1D19100E97235 /* SMLabelCell.m in Sources */,
 				55D41F871BE12C3500CF9DF0 /* SMAboutUsController.m in Sources */,
 				550D98FE1BE20FDB003EA39A /* SMRecomendCell.m in Sources */,
+				55FC28C91BE474D800B287E1 /* SMMainViewController.m in Sources */,
 				550D990B1BE231B0003EA39A /* SMRecommendNesFrame.m in Sources */,
 				55A4A0DB1BE348760003BBBD /* NSDate+MJ.m in Sources */,
 			);

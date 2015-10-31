@@ -19,6 +19,8 @@
 @property (nonatomic,strong) SMHomeViewController *homeVc;
 @property (nonatomic,strong) SMForumListController *forumVc;
 
+
+
 @end
 
 @implementation SMMainViewController
@@ -28,7 +30,7 @@
 #warning TODO 待修改右边的显示图片
         // titleView
         _seg = [[UISegmentedControl alloc] initWithItems:@[@"推荐",@"版块"]];
-        _seg.frame =CGRectMake(0,0,200.0,20);
+        _seg.frame =CGRectMake(0,0,200.0,30);
         
         [_seg setTitle:@"推荐"forSegmentAtIndex:0];//设置指定索引的题目
         
@@ -70,7 +72,7 @@
 - (SMForumListController *)forumVc{
     if (!_forumVc) {
         _forumVc = [[SMForumListController alloc] init];
-        _forumVc.view.frame = CGRectMake(0, 64, self.view.width, self.view.height);
+        _forumVc.view.backgroundColor = SMGlobleColor;
     }
     return _forumVc;
 }
@@ -78,7 +80,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = SMGlobleColor;
+//    self.view.backgroundColor = SMGlobleColor;
     
     // 设置导航条
     [self setNav];
@@ -87,6 +89,7 @@
     [self enterHomeView];
     self.seg.selectedSegmentIndex = 0;
 //    [SMNotificationCenter postNotificationName:@"UIControlEventValueChanged" object:nil];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -144,6 +147,7 @@
 //    self.forumVc.view.hidden = YES;
     [self.forumVc.view removeFromSuperview];
     [self.view addSubview:self.homeVc.view];
+
 }
 
 - (void)enterForumView{
@@ -152,10 +156,8 @@
 //    self.forumVc.view.hidden = NO;
     [self.homeVc.view removeFromSuperview];
     [self.view addSubview:self.forumVc.view];
+
 }
 
-//
-//- (void)dealloc{
-//    [SMNotificationCenter removeObserver:self name:@"UIControlEventValueChanged" object:nil];
-//}
+
 @end

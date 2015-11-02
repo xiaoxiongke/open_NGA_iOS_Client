@@ -35,50 +35,39 @@
 //        
 //        // 添加通知
 //        [SMNotificationCenter addObserver:self selector:@selector(loadMenuData:) name:@"SMForumList" object:nil];
-        
-
-
-        
     }
     return self;
     
     
 }
-//
-//#pragma mark - 接收通知方法
-//
-//- (void)loadMenuData:(NSNotification*)notification{
-//
-//    // 发过来的是整个大得模型
-////    SMLog(@"%@",notification.userInfo[@"array"]);
-//    self.bigModelArray = notification.userInfo[@"array"];
-//    // 遍历数组，取出模型数组
-//    for (SMForumCatagory *big in self.bigModelArray) {
-//        self.midModelArray = [SMMidCatagory objectArrayWithKeyValuesArray:big.list];
-//    }
-//  
-//    for (SMMidCatagory *mid in self.midModelArray) {
-//        self.smallModelArray = [SMForumList objectArrayWithKeyValuesArray:mid.list];
-//    }
-//
-//}
 
+- (NSMutableArray *)midModelArray{
+    if (!_midModelArray) {
+        _midModelArray = [NSMutableArray array];
+    }
+    return _midModelArray;
+}
+
+- (NSMutableArray *)smallModelArray{
+    if (!_smallModelArray) {
+        _smallModelArray = [NSMutableArray array];
+    }
+    return _smallModelArray;
+}
+
+
+
+- (void)getModel{
+
+
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.view.backgroundColor = SMGlobleColor;
     self.tableView.rowHeight = 80;
-    
-    // 取出模型
-    for (SMForumCatagory *cata in self.bigModelArray) {
-        [self.midModelArray addObjectsFromArray:cata.list];
-    }
-    for (SMMidCatagory *mid in self.midModelArray) {
-        [self.smallModelArray addObjectsFromArray:mid.list];
-    }
-    
-    
 }
 
 
@@ -100,10 +89,11 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-
-
     
-    return self.smallModelArray.count;
+    // 取出模型
+    SMForumCatagory *bigModel = self.bigModel;
+    SMMidCatagory *midModel = bigModel.list[0];
+    return midModel.list.count;
     
 }
 
@@ -114,12 +104,12 @@
         cell = [SMForumListCell cellOfForumListWithTableView:tableView];
 
         // 取出模型
-        
-        
-        SMForumList *list = self.smallModelArray[indexPath.row];
+        SMForumCatagory *bigModel = self.bigModel;
+        SMMidCatagory *midModel = bigModel.list[0];
+        SMForumList *list = midModel.list[indexPath.row];
         // 传递模型
         cell.listModel = list;
-  
+
     }
 
     return cell;

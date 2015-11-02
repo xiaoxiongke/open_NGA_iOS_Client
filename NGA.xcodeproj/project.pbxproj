@@ -24,6 +24,7 @@
 		5533D76A1BE06D8D0005D0E3 /* SMHomeNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5533D7691BE06D8D0005D0E3 /* SMHomeNavViewController.m */; };
 		553DEC7B1BE0BD3E0084C789 /* SMLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 553DEC7A1BE0BD3E0084C789 /* SMLeftView.m */; };
 		553DEC7D1BE0BD5A0084C789 /* SMLeftView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 553DEC7C1BE0BD5A0084C789 /* SMLeftView.xib */; };
+		556474A41BE7002100AB0B1A /* SMFavorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 556474A31BE7002100AB0B1A /* SMFavorViewController.m */; };
 		557AFD591BE1CF9900E97235 /* SMItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 557AFD581BE1CF9900E97235 /* SMItemCell.m */; };
 		557AFD5C1BE1CFC100E97235 /* SMItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 557AFD5B1BE1CFC100E97235 /* SMItem.m */; };
 		557AFD5F1BE1D17500E97235 /* SMNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 557AFD5E1BE1D17500E97235 /* SMNormalCell.m */; };
@@ -124,6 +125,8 @@
 		553DEC791BE0BD3E0084C789 /* SMLeftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMLeftView.h; sourceTree = "<group>"; };
 		553DEC7A1BE0BD3E0084C789 /* SMLeftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMLeftView.m; sourceTree = "<group>"; };
 		553DEC7C1BE0BD5A0084C789 /* SMLeftView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMLeftView.xib; sourceTree = "<group>"; };
+		556474A21BE7002100AB0B1A /* SMFavorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMFavorViewController.h; sourceTree = "<group>"; };
+		556474A31BE7002100AB0B1A /* SMFavorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMFavorViewController.m; sourceTree = "<group>"; };
 		557AFD571BE1CF9900E97235 /* SMItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMItemCell.h; sourceTree = "<group>"; };
 		557AFD581BE1CF9900E97235 /* SMItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMItemCell.m; sourceTree = "<group>"; };
 		557AFD5A1BE1CFC100E97235 /* SMItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMItem.h; sourceTree = "<group>"; };
@@ -528,6 +531,8 @@
 				55F3C8701BE5657D008EF11B /* SMForumListController.m */,
 				55F3C8751BE5671E008EF11B /* SMForumListTableController.h */,
 				55F3C8731BE56717008EF11B /* SMForumListTableController.m */,
+				556474A21BE7002100AB0B1A /* SMFavorViewController.h */,
+				556474A31BE7002100AB0B1A /* SMFavorViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1037,6 +1042,7 @@
 				557AFD6E1BE1D25C00E97235 /* SMLabelItem.m in Sources */,
 				557AFD5F1BE1D17500E97235 /* SMNormalCell.m in Sources */,
 				557AFD651BE1D19100E97235 /* SMLabelCell.m in Sources */,
+				556474A41BE7002100AB0B1A /* SMFavorViewController.m in Sources */,
 				55D41F871BE12C3500CF9DF0 /* SMAboutUsController.m in Sources */,
 				550D98FE1BE20FDB003EA39A /* SMRecomendCell.m in Sources */,
 				55FC28C91BE474D800B287E1 /* SMMainViewController.m in Sources */,

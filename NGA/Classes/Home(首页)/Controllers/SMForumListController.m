@@ -16,6 +16,8 @@
 #import "SMForumList.h"
 #import "SMForumCatagory.h"
 #import "SMMidCatagory.h"
+#import "SMFavorViewController.h"
+
 
 @interface SMForumListController ()<UIScrollViewDelegate>
 /**
@@ -140,21 +142,31 @@
 
     for (int i=0 ; i<self.listNameArray.count ;i++){
         
+        if (i == 0) {
+            // 我的收藏页面
+            SMFavorViewController  *vc0 = [[SMFavorViewController alloc] init];
         
-        SMForumListTableController  *vc1 = [[SMForumListTableController alloc] init];
+            
+            [self addChildViewController:vc0];
+            
+        }else{
+            
+            SMForumListTableController  *vc1 = [[SMForumListTableController alloc] init];
 
-        vc1.menuTitle = self.listNameArray[i];
+            vc1.menuTitle = self.listNameArray[i];
+            
+            vc1.bigModel = arrayM[i - 1];
 
-        vc1.bigModelArray = arrayM;
-
-        [self addChildViewController:vc1];
-    };
+            [self addChildViewController:vc1];
+        }
+    }
 }
 
 /** 添加标题栏 */
 - (void)addLable
 {
     for (int i = 0; i < self.listNameArray.count; i++) {
+
         CGFloat lblW = 80;
         CGFloat lblH = 35;
         CGFloat lblY = 0;
@@ -162,7 +174,14 @@
         SMListNameLabel *lbl1 = [[SMListNameLabel alloc] init];
         SMForumListTableController *vc = self.childViewControllers[i];
 
-        lbl1.text = vc.menuTitle;
+        if (i == 0) {
+            
+            lbl1.text = @"我的收藏";
+            
+        }else{
+        
+            lbl1.text = vc.menuTitle;
+        }
         lbl1.frame = CGRectMake(lblX, lblY, lblW, lblH);
 //        lbl1.font = [UIFont fontWithName:@"HYQiHei" size:19];
         lbl1.font = SMTitleFont;
@@ -270,9 +289,7 @@
         // 设置最新获取的帖子
         
         NSArray *arr = responseObject[@"result"];
-        
-        SMLog(@"%@",arr);
-        
+
         if (arr.count != 0){
 
 
@@ -282,21 +299,23 @@
             // 列表菜单模型数组
 
             self.listArray = [SMForumCatagory objectArrayWithKeyValuesArray:arr];
- 
-            [self addController:self.listArray];
             
+            // 添加控制器和Label
+            [self addController:self.listArray];
             [self addLable];
             [self setUpScrollView];
         }
         else
         {
             dispatch_sync(dispatch_get_main_queue(), ^{
-                // 列表菜单模型数组
+            // 列表菜单模型数组
             self.listArray = [SMForumCatagory objectArrayWithKeyValuesArray:arr];
-            [self addController:self.listArray];
                 
+            // 添加控制器和Label
+            [self addController:self.listArray];
             [self addLable];
             [self setUpScrollView];
+                
             });  
         }
         

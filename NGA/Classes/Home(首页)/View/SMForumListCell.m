@@ -13,7 +13,7 @@
 @interface SMForumListCell()
 @property (weak, nonatomic) IBOutlet UIImageView *iconView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 
 
 
@@ -22,7 +22,7 @@
 @implementation SMForumListCell
 
 - (void)awakeFromNib {
-    // Initialization code
+
 }
 
 - (void)setListModel:(SMForumList *)listModel{
@@ -31,8 +31,10 @@
     
     self.iconView.image = [UIImage imageNamed:@"forum_icon_fist"];
     self.titleLabel.text = self.listModel.name;
-    self.detailTextLabel.text = self.listModel.info;
+    self.infoLabel.text = self.listModel.info;
     
+    
+ 
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

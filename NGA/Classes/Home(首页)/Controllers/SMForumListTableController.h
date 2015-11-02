@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "SMForumCatagory.h"
 @interface SMForumListTableController : UITableViewController
 
 
@@ -21,7 +21,9 @@
 /**
  *  大模型
  */
-@property (nonatomic,strong)NSArray *bigModelArray;
+//@property (nonatomic,strong)NSArray *bigModelArray;
+
+@property (nonatomic,strong)SMForumCatagory *bigModel;
 
 
 

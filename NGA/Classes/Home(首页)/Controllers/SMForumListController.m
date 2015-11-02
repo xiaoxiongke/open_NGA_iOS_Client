@@ -45,8 +45,7 @@
 - (instancetype)init{
     
     if (self = [super init]) {
-        
-      
+
     }
     return self;
 
@@ -55,7 +54,7 @@
 
 - (NSArray *)listNameArray{
     if (!_listNameArray) {
-        _listNameArray = @[@"我的收藏",@"网事杂谈精选",@"魔兽世界",@"往事杂谈",@"暴雪游戏",@"游戏专版"];
+        _listNameArray = @[@"我的收藏",@"网事杂谈精选",@"魔兽世界",@"网事杂谈",@"暴雪游戏",@"游戏专版"];
 
     }
     return _listNameArray;
@@ -95,11 +94,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+//    self.navigationController.navigationBarHidden = YES;
+//
+//    // 添加通知
+//    [SMNotificationCenter addObserver:self selector:@selector(changeScrollPosition) name:@"celldidClick" object:nil];
+
+    
     self.view.backgroundColor = SMContentFontColor;
     // 加载列表数据
     [self loadForumList];
-
-   
+    
+    [self addLable];
+    [self setUpScrollView];
 
 }
 
@@ -122,6 +128,8 @@
     self.contentScrollView.contentSize = CGSizeMake(contentX, 0);
     self.contentScrollView.pagingEnabled = YES;
     
+#warning TODO 默认进入非我的收藏界面
+    
     // 添加默认控制器
     UIViewController *vc = [self.childViewControllers firstObject];
     vc.view.frame = self.contentScrollView.bounds;
@@ -129,8 +137,6 @@
     SMListNameLabel *lable = [self.listScrollView.subviews firstObject];
     lable.scale = 1.0;
     self.contentScrollView.showsHorizontalScrollIndicator = NO;
-    
-
 }
 
 
@@ -145,19 +151,20 @@
         if (i == 0) {
             // 我的收藏页面
             SMFavorViewController  *vc0 = [[SMFavorViewController alloc] init];
-        
             
-            [self addChildViewController:vc0];
+            SMHomeNavViewController *nav = [[SMHomeNavViewController alloc] initWithRootViewController:vc0];
+//            nav.navigationBarHidden = YES;
+            [self addChildViewController:nav];
             
         }else{
-            
             SMForumListTableController  *vc1 = [[SMForumListTableController alloc] init];
-
+            SMHomeNavViewController *nav = [[SMHomeNavViewController alloc] initWithRootViewController:vc1];
+//            nav.navigationBarHidden = YES;
             vc1.menuTitle = self.listNameArray[i];
             
             vc1.bigModel = arrayM[i - 1];
 
-            [self addChildViewController:vc1];
+            [self addChildViewController:nav];
         }
     }
 }
@@ -172,7 +179,6 @@
         CGFloat lblY = 0;
         CGFloat lblX = i * lblW;
         SMListNameLabel *lbl1 = [[SMListNameLabel alloc] init];
-        SMForumListTableController *vc = self.childViewControllers[i];
 
         if (i == 0) {
             
@@ -180,7 +186,7 @@
             
         }else{
         
-            lbl1.text = vc.menuTitle;
+            lbl1.text = self.listNameArray[i];
         }
         lbl1.frame = CGRectMake(lblX, lblY, lblW, lblH);
 //        lbl1.font = [UIFont fontWithName:@"HYQiHei" size:19];
@@ -291,9 +297,7 @@
         NSArray *arr = responseObject[@"result"];
 
         if (arr.count != 0){
-
-
-            
+         
         if ([NSThread isMainThread])
         {
             // 列表菜单模型数组
@@ -302,8 +306,7 @@
             
             // 添加控制器和Label
             [self addController:self.listArray];
-            [self addLable];
-            [self setUpScrollView];
+
         }
         else
         {
@@ -313,8 +316,6 @@
                 
             // 添加控制器和Label
             [self addController:self.listArray];
-            [self addLable];
-            [self setUpScrollView];
                 
             });  
         }
@@ -336,11 +337,11 @@
 }
 
 
-- (void)dealloc{
-
-//    [SMNotificationCenter removeObserver:self name:@"SMForumList" object:nil];
-    
-}
+//- (void)dealloc{
+//
+//    [SMNotificationCenter removeObserver:self name:@"celldidClick" object:nil];
+//    
+//}
 
 
 @end

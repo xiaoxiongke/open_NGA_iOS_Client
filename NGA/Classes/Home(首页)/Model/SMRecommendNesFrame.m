@@ -17,8 +17,6 @@
     _recommendNews = recommendNews;
     // 计算帖子的frame
     [self setUpRecommendNesFrame];
-
-
 }
 
 
@@ -40,13 +38,13 @@
     // 作者icon
     CGFloat iconX = titleX;
     CGFloat iconY = titleY + titleRect.size.height + SMRecommendCellMargin;
-    CGFloat iconWH = 20;
+    CGFloat iconWH = 15;
     _userIconFrame = CGRectMake(iconX, iconY, iconWH, iconWH);
 
     // 作者名称
     
     CGFloat nameX = iconX + iconWH +SMRecommendCellMargin;
-    CGFloat nameY = iconY + iconWH *0.25;
+    CGFloat nameY = iconY + iconWH *0.125;
     NSDictionary *nameDict = [NSDictionary dictionary];
     
     nameDict = @{NSFontAttributeName:SMNameFont};
@@ -77,6 +75,7 @@
         CGFloat picW = SMScreenW - 2*SMRecommendCellMargin;
         CGFloat picH = SMPicHeight;
         _picFrame = CGRectMake(picX, picY, picW, picH);
+
     }else{
         
         _picFrame = CGRectMake(SMRecommendCellMargin, iconY +iconWH, 0, 0);
@@ -90,17 +89,16 @@
 
             NSDictionary *textDict = [NSDictionary dictionary];
             
-            textDict = @{NSFontAttributeName:SMContentTextFont};
-//            CGSize textLabelSize = [_recommendNews.thread_abstract sizeWithAttributes:textDict];
-//            _contentFrame = (CGRect){{textLabelX,textLabelY},textLabelSize};
-            
+            textDict = @{NSFontAttributeName:SMContentTextFont,NSForegroundColorAttributeName:SMContentFontColor};
             
             CGRect textLabelRect = [_recommendNews.thread_abstract boundingRectWithSize:CGSizeMake(SMScreenW - 2*SMRecommendCellMargin, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:textDict context:nil];
             CGFloat textLabelX = SMRecommendCellMargin;
-            CGFloat textLabelY = CGRectGetMaxY(_picFrame)  + SMRecommendCellMargin;
+            CGFloat textLabelY = CGRectGetMaxY(_picFrame) + SMRecommendCellMargin;
             textLabelRect.origin.x = textLabelX;
             textLabelRect.origin.y = textLabelY;
+            
             _contentFrame = textLabelRect;
+            
     
         }
         // 没有配图

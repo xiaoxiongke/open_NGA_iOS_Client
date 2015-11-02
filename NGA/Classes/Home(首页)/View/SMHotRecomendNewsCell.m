@@ -53,7 +53,7 @@
         
         // 添加所有子控件
         [self setUpAllChildView];
-//        self.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = SMlightColor;
     }
     
     return self;
@@ -71,6 +71,7 @@
     UILabel *titleLabel = [[UILabel alloc] init];
     titleLabel.font = SMTitleFont;
     titleLabel.numberOfLines = 0;
+    titleLabel.textColor = SMTitleFontColor;
     [self addSubview:titleLabel];
     _titleView = titleLabel;
     
@@ -107,6 +108,8 @@
 
     UIImageView *pic = [[UIImageView alloc] init];
     [self addSubview:pic];
+//    pic.contentMode = UIViewContentModeScaleAspectFill;
+    pic.contentMode = UIViewContentModeScaleToFill;
     _pic = pic;
     
     // 正文
@@ -186,6 +189,7 @@
     if (_recommendF.recommendNews.thread_icon.length) {
         NSURL *url = [NSURL URLWithString:_recommendF.recommendNews.thread_icon];
         [_pic sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"recommend_loading_listimage"]];
+        _pic.contentMode = UIViewContentModeScaleToFill;
 
     }
     

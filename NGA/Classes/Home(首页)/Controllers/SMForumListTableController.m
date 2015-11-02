@@ -12,7 +12,12 @@
 #import "SMForumCatagory.h"
 #import "SMMidCatagory.h"
 #import "SMForumList.h"
-
+#import "SMBaseTieziViewController.h"
+#import "SMHomeNavViewController.h"
+#import "AFNetworking.h"
+#import "SMTieziModel.h"
+#import "SMTieziFrameModel.h"
+#import "SMResult.h"
 
 @interface SMForumListTableController ()
 
@@ -26,20 +31,27 @@
  */
 @property (nonatomic,strong)NSMutableArray *smallModelArray;
 
+
+@property (nonatomic,strong)NSMutableArray *tieziFrameArray;
+
+@property (nonatomic,strong)NSMutableArray *tieziArray;
+
+
 @end
 
 @implementation SMForumListTableController
 
 - (instancetype)init{
     if (self = [super init]) {
-//        
-//        // 添加通知
-//        [SMNotificationCenter addObserver:self selector:@selector(loadMenuData:) name:@"SMForumList" object:nil];
+
+        SMHomeNavViewController *nav = [[SMHomeNavViewController alloc] initWithRootViewController:self];
+        nav.view.backgroundColor = SMRandomColor;
+        
     }
     return self;
-    
-    
+
 }
+
 
 - (NSMutableArray *)midModelArray{
     if (!_midModelArray) {
@@ -57,17 +69,15 @@
 
 
 
-- (void)getModel{
 
-
-    
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.view.backgroundColor = SMGlobleColor;
     self.tableView.rowHeight = 80;
+//    
+//    self.navigationController.navigationBarHidden = YES;
 }
 
 
@@ -119,13 +129,123 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    // 发送请求 
+
+
+    
+    [self loadNewData];
+
+    
+    SMBaseTieziViewController *tieziVc = [[SMBaseTieziViewController alloc] initWithStyle:UITableViewStylePlain];
+    tieziVc.tieziFrameArray = self.tieziFrameArray;
+    
+//    SMHomeNavViewController *nav = [[SMHomeNavViewController alloc] initWithRootViewController:tieziVc];
+    SMLog(@"选中了%d行",indexPath.row);
+
+    
+    if (ios8dwon) {
+        [self.navigationController pushViewController:tieziVc animated:YES];
+    }else{
+    
+        // 进入论坛版块
+        [self showViewController:tieziVc sender:nil];
+        
+    }
 }
 
 
 
+//
+//- (void)dealloc{
+//    [SMNotificationCenter removeObserver:self name:@"SMForumList" object:nil];
+//}
 
-- (void)dealloc{
-    [SMNotificationCenter removeObserver:self name:@"SMForumList" object:nil];
+
+/**
+ *  加载最新新闻
+ */
+- (void)loadNewData{
+    
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"access_token"] = @"9a9a07dff2a3bd3ec92d52c1303439cf";
+    param[@"access_uid"] = @8081883;
+    param[@"app_id"] = @1001;
+    param[@"fid"] = @-7;
+    param[@"sign"] = @"a1b9e2091db56c4d62d4807a22ae5b7d";
+    param[@"t"] = @1446458975;
+    
+    [mgr POST:@"http://bbs.nga.cn/app_api.php?__lib=subject&__act=list" parameters:param success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSDictionary *dict = responseObject[@"result"];
+        // 设置最新获取的帖子
+        NSArray *dataArray = [dict objectForKey:@"data"];
+
+        NSArray *tieziArray = [SMTieziModel objectArrayWithKeyValuesArray:dataArray];
+    
+        if ([NSThread isMainThread])
+        {
+            // 列表菜单模型数组
+            NSMutableArray *arrMF = [NSMutableArray array];
+            for (SMTieziModel *tiezi in tieziArray) {
+                SMTieziFrameModel *tieziF = [[SMTieziFrameModel alloc] init];
+                tieziF.tiezi = tiezi;
+                [arrMF addObject:tieziF];
+            }
+            self.tieziFrameArray = arrMF;
+        }
+        else
+        {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                // 列表菜单模型数组
+                NSMutableArray *arrMF = [NSMutableArray array];
+                for (SMTieziModel *tiezi in tieziArray) {
+                    SMTieziFrameModel *tieziF = [[SMTieziFrameModel alloc] init];
+                    tieziF.tiezi = tiezi;
+                    [arrMF addObject:tieziF];
+                }
+                self.tieziFrameArray = arrMF;
+                
+            });
+        }
+   
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+
+        
+    }];
+    
+}
+
+/**
+ *  加载更多新闻
+ */
+
+- (void)loadMoreData{
+    
+    AFHTTPRequestOperationManager *mggr = [AFHTTPRequestOperationManager manager];
+    
+#warning TODO 请求更多数据暂时不会实现
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    //    param[@"currentPage"] = @2;
+    //    param[@"guest_token"] = @"guest056332ba85d0d4";
+    
+    [mggr POST:@"http://bbs.nga.cn/app_api.php?__lib=subject&__act=list" parameters:param success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+
+            // 列表菜单模型数组
+            NSArray *newsArray = [SMTieziModel objectArrayWithKeyValuesArray:responseObject[@"data"]];
+            NSMutableArray *moreNews = [NSMutableArray array];
+            for (SMTieziModel *news in newsArray) {
+                SMTieziFrameModel *recF = [[SMTieziFrameModel alloc] init];
+                recF.tiezi = news;
+                [moreNews addObject:recF];
+            }
+            [self.tieziFrameArray addObjectsFromArray:moreNews];
+
+        
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+
+        
+    }];
+    
 }
 
 

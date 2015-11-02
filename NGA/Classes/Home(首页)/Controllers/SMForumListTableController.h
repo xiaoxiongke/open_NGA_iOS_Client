@@ -10,6 +10,7 @@
 #import "SMForumCatagory.h"
 @interface SMForumListTableController : UITableViewController
 
+@property (nonatomic,strong)MMDrawerController *mmDrawerVc;
 
 /**
  *  标题

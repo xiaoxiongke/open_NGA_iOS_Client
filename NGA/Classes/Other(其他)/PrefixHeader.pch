@@ -34,19 +34,24 @@
 
 
 // 文字设置
-#define SMTitleFont [UIFont systemFontOfSize:14]
-#define SMNameFont [UIFont systemFontOfSize:10]
+#define SMTitleFont [UIFont systemFontOfSize:16]
+#define SMNameFont [UIFont systemFontOfSize:12]
 #define SMTimeFont SMNameFont
-#define SMContentTextFont [UIFont systemFontOfSize:12]
+#define SMContentTextFont [UIFont systemFontOfSize:13]
 #define SMForumListFontColor SMColor(110, 32, 13)
-#define SMTitleFontColor SMColor(16, 23, 32)
-#define SMContentFontColor SMColor(15, 29, 49)
+#define SMTitleFontColor SMColor(93, 52, 30)
+#define SMContentFontColor SMColor(155, 155, 155)
 
 // 屏幕设置
 #define SMScreenW [UIScreen mainScreen].bounds.size.width
+#define SMScreenH [UIScreen mainScreen].bounds.size.height
 
 
 #define SMNotificationCenter [NSNotificationCenter defaultCenter]
+
+#define ios8dwon [UIDevice currentDevice].systemVersion.floatValue <= 8.0
+
+
 
 // ...表示宏定义的可变参数
 // __VA_ARGS__:表示函数里面的可变参数

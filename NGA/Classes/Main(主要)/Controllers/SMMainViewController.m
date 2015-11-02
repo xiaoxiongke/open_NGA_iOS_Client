@@ -15,13 +15,13 @@
 #import "SMMidCatagory.h"
 #import "SMForumList.h"
 #import "SMForumCatagory.h"
+#import "SMHomeNavViewController.h"
 
 
 @interface SMMainViewController ()
 
 
-@property (nonatomic,strong) UISegmentedControl *seg;
-
+@property (nonatomic,strong)UISegmentedControl *seg;
 @property (nonatomic,strong) SMHomeViewController *homeVc;
 @property (nonatomic,strong) SMForumListController *forumVc;
 
@@ -39,12 +39,21 @@
 #warning TODO 待修改右边的显示图片
         // titleView
         _seg = [[UISegmentedControl alloc] initWithItems:@[@"推荐",@"版块"]];
-        _seg.frame =CGRectMake(0,0,200.0,30);
-        
+        _seg.frame =CGRectMake(0,0,180,30);
+
         [_seg setTitle:@"推荐"forSegmentAtIndex:0];//设置指定索引的题目
         
         [_seg setBackgroundImage:[UIImage imageNamed:@"navbar_titleview_leftbtn_unselected"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
         [_seg setBackgroundImage:[UIImage imageNamed:@"navbar_titleview_leftbtn_selected"] forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+   
+        if (_seg.selectedSegmentIndex == 0) {
+            [_seg setBackgroundColor:SMColor(255, 250, 232)];
+
+        }else{
+            [_seg setBackgroundColor:SMColor(66, 13, 0)];
+        }
+
+        
         
         NSDictionary *normalAttrs = [NSDictionary dictionary];
         normalAttrs = @{NSFontAttributeName:SMContentTextFont,NSForegroundColorAttributeName:SMForumListFontColor};
@@ -56,12 +65,10 @@
         [_seg setTitleTextAttributes:selectAttrs forState:UIControlStateSelected];
         
         [_seg setTitle:@"版块" forSegmentAtIndex:1];
-        //    [seg setImage:[UIImage imageNamed:@"recommend_forumbg"] forSegmentAtIndex:1];//设置指定索引的图片
         
         [_seg addTarget:self action:@selector(segmentValueChanged:) forControlEvents:UIControlEventValueChanged];
 
-//        [SMNotificationCenter addObserver:self selector:@selector(segmentValueChanged:) name:@"UIControlEventValueChanged" object:nil];
-        
+
         _seg.selectedSegmentIndex = 0;
         self.seg = _seg;
         self.navigationItem.titleView = _seg;
@@ -69,6 +76,9 @@
     }
     return _seg;
 }
+
+
+
 
 - (SMHomeViewController *)homeVc{
     if (!_homeVc) {
@@ -86,11 +96,15 @@
 }
 
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.view.backgroundColor = SMGlobleColor;
-    
 
+    // 添加通知
+//    [SMNotificationCenter addObserver:self selector:@selector(hideNavBar) name:@"celldidClick" object:nil];
+    
     // 设置导航条
     [self setNav];
     
@@ -103,9 +117,18 @@
     
 //    // 加载列表数据
 //    [self loadForumList];
-    
 
 }
+
+/**
+ *  隐藏状态栏
+ */
+- (void)hideNavBar{
+
+    self.navigationController.navigationBarHidden = YES;
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -142,7 +165,7 @@
 }
 
 
-//全部/分组页面的切换
+// 全部/分组页面的切换
 - (void)segmentValueChanged:(id)sender
 {
     
@@ -152,9 +175,12 @@
     }else
     {
         [self enterForumView];
+
     }
     
 }
+
+
 
 
 - (void)enterHomeView{
@@ -171,9 +197,20 @@
     SMLog(@"enterForumView");
 //    self.homeVc.view.hidden = YES;
 //    self.forumVc.view.hidden = NO;
+
+    
     [self.homeVc.view removeFromSuperview];
     [self.view addSubview:self.forumVc.view];
 
+}
+
+
+
+
+- (void)dealloc{
+    
+    [SMNotificationCenter removeObserver:self name:@"celldidClick" object:nil];
+    
 }
 
 

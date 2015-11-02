@@ -10,4 +10,6 @@
 
 @interface SMHomeNavViewController : UINavigationController
 
+@property (nonatomic,assign) NSInteger index;
+
 @end

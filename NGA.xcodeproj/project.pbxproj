@@ -32,6 +32,9 @@
 		557AFD681BE1D24600E97235 /* SMNormalItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 557AFD671BE1D24600E97235 /* SMNormalItem.m */; };
 		557AFD6E1BE1D25C00E97235 /* SMLabelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 557AFD6D1BE1D25C00E97235 /* SMLabelItem.m */; };
 		557AFD711BE1D2F200E97235 /* SMSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 557AFD701BE1D2F200E97235 /* SMSwitchItem.m */; };
+		55997A0F1BE60CC800153349 /* SMForumCatagory.m in Sources */ = {isa = PBXBuildFile; fileRef = 55997A0E1BE60CC800153349 /* SMForumCatagory.m */; };
+		55997A121BE60CF000153349 /* SMForumList.m in Sources */ = {isa = PBXBuildFile; fileRef = 55997A111BE60CF000153349 /* SMForumList.m */; };
+		55997A151BE60DE600153349 /* SMMidCatagory.m in Sources */ = {isa = PBXBuildFile; fileRef = 55997A141BE60DE600153349 /* SMMidCatagory.m */; };
 		559AD4F61BE2621B005F4B84 /* SMNewsParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 559AD4F51BE2621B005F4B84 /* SMNewsParam.m */; };
 		559AD4F91BE2672D005F4B84 /* SMNewsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 559AD4F81BE2672D005F4B84 /* SMNewsResult.m */; };
 		55A4A0D81BE316FE0003BBBD /* SMUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A4A0D71BE316FE0003BBBD /* SMUser.m */; };
@@ -57,6 +60,8 @@
 		55F3C36F1BDFB0E300836D4D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 55F3C36E1BDFB0E300836D4D /* Podfile */; };
 		55F3C8721BE5657D008EF11B /* SMForumListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3C8701BE5657D008EF11B /* SMForumListController.m */; };
 		55F3C8741BE56717008EF11B /* SMForumListTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3C8731BE56717008EF11B /* SMForumListTableController.m */; };
+		55F3C87B1BE57603008EF11B /* SMForumListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3C8791BE57603008EF11B /* SMForumListCell.m */; };
+		55F3C87C1BE57603008EF11B /* SMForumListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55F3C87A1BE57603008EF11B /* SMForumListCell.xib */; };
 		55FAF10E1BE254B60049121A /* SMNewsTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FAF10D1BE254B60049121A /* SMNewsTool.m */; };
 		55FAF1121BE2557A0049121A /* SMHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FAF1111BE2557A0049121A /* SMHttpTool.m */; };
 		55FAF1151BE255E50049121A /* SMAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FAF1141BE255E50049121A /* SMAccountTool.m */; };
@@ -135,6 +140,12 @@
 		557AFD6D1BE1D25C00E97235 /* SMLabelItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMLabelItem.m; sourceTree = "<group>"; };
 		557AFD6F1BE1D2F200E97235 /* SMSwitchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSwitchItem.h; sourceTree = "<group>"; };
 		557AFD701BE1D2F200E97235 /* SMSwitchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSwitchItem.m; sourceTree = "<group>"; };
+		55997A0D1BE60CC800153349 /* SMForumCatagory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMForumCatagory.h; sourceTree = "<group>"; };
+		55997A0E1BE60CC800153349 /* SMForumCatagory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMForumCatagory.m; sourceTree = "<group>"; };
+		55997A101BE60CF000153349 /* SMForumList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMForumList.h; sourceTree = "<group>"; };
+		55997A111BE60CF000153349 /* SMForumList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMForumList.m; sourceTree = "<group>"; };
+		55997A131BE60DE600153349 /* SMMidCatagory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMMidCatagory.h; sourceTree = "<group>"; };
+		55997A141BE60DE600153349 /* SMMidCatagory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMMidCatagory.m; sourceTree = "<group>"; };
 		559AD4F41BE2621B005F4B84 /* SMNewsParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMNewsParam.h; sourceTree = "<group>"; };
 		559AD4F51BE2621B005F4B84 /* SMNewsParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMNewsParam.m; sourceTree = "<group>"; };
 		559AD4F71BE2672D005F4B84 /* SMNewsResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMNewsResult.h; sourceTree = "<group>"; };
@@ -182,6 +193,9 @@
 		55F3C8711BE5657D008EF11B /* SMForumListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMForumListController.h; sourceTree = "<group>"; };
 		55F3C8731BE56717008EF11B /* SMForumListTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMForumListTableController.m; sourceTree = "<group>"; };
 		55F3C8751BE5671E008EF11B /* SMForumListTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMForumListTableController.h; sourceTree = "<group>"; };
+		55F3C8781BE57603008EF11B /* SMForumListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMForumListCell.h; sourceTree = "<group>"; };
+		55F3C8791BE57603008EF11B /* SMForumListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMForumListCell.m; sourceTree = "<group>"; };
+		55F3C87A1BE57603008EF11B /* SMForumListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMForumListCell.xib; sourceTree = "<group>"; };
 		55FAF10C1BE254B60049121A /* SMNewsTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMNewsTool.h; sourceTree = "<group>"; };
 		55FAF10D1BE254B60049121A /* SMNewsTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMNewsTool.m; sourceTree = "<group>"; };
 		55FAF1101BE2557A0049121A /* SMHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMHttpTool.h; sourceTree = "<group>"; };
@@ -527,6 +541,12 @@
 				550D990A1BE231B0003EA39A /* SMRecommendNesFrame.m */,
 				55A4A0D61BE316FE0003BBBD /* SMUser.h */,
 				55A4A0D71BE316FE0003BBBD /* SMUser.m */,
+				55997A0D1BE60CC800153349 /* SMForumCatagory.h */,
+				55997A0E1BE60CC800153349 /* SMForumCatagory.m */,
+				55997A101BE60CF000153349 /* SMForumList.h */,
+				55997A111BE60CF000153349 /* SMForumList.m */,
+				55997A131BE60DE600153349 /* SMMidCatagory.h */,
+				55997A141BE60DE600153349 /* SMMidCatagory.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -541,6 +561,9 @@
 				550D99101BE23D8D003EA39A /* SMHotRecomendNewsCell.m */,
 				55FC28D11BE49B9300B287E1 /* SMListNameLabel.h */,
 				55FC28D21BE49B9300B287E1 /* SMListNameLabel.m */,
+				55F3C8781BE57603008EF11B /* SMForumListCell.h */,
+				55F3C8791BE57603008EF11B /* SMForumListCell.m */,
+				55F3C87A1BE57603008EF11B /* SMForumListCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -889,6 +912,7 @@
 				55FC28CB1BE4998F00B287E1 /* NewsURLs.plist in Resources */,
 				55CAA2601BE051F60057A058 /* Main.storyboard in Resources */,
 				55CAA2611BE051F60057A058 /* Info.plist in Resources */,
+				55F3C87C1BE57603008EF11B /* SMForumListCell.xib in Resources */,
 				553DEC7D1BE0BD5A0084C789 /* SMLeftView.xib in Resources */,
 				55CAA25F1BE051F60057A058 /* LaunchScreen.storyboard in Resources */,
 				550D99021BE217F7003EA39A /* SMRecomendCell.xib in Resources */,
@@ -973,6 +997,7 @@
 				550D99081BE2317D003EA39A /* SMRecommendNews.m in Sources */,
 				557AFD591BE1CF9900E97235 /* SMItemCell.m in Sources */,
 				55FAF1181BE256290049121A /* SMAccount.m in Sources */,
+				55F3C87B1BE57603008EF11B /* SMForumListCell.m in Sources */,
 				557AFD681BE1D24600E97235 /* SMNormalItem.m in Sources */,
 				550078F21BE05BEE00CFD781 /* UIBarButtonItem+Extension.m in Sources */,
 				559AD4F91BE2672D005F4B84 /* SMNewsResult.m in Sources */,
@@ -982,6 +1007,7 @@
 				559AD4F61BE2621B005F4B84 /* SMNewsParam.m in Sources */,
 				55CAA2621BE051F60057A058 /* main.m in Sources */,
 				55CAA25D1BE051F60057A058 /* AppDelegate.m in Sources */,
+				55997A121BE60CF000153349 /* SMForumList.m in Sources */,
 				552066A31BE1EAD30083A3F0 /* SMForumViewController.m in Sources */,
 				55A4A0E81BE394AA0003BBBD /* SMConst.m in Sources */,
 				5506B9A41BE0F61400299633 /* SMShopViewController.m in Sources */,
@@ -1004,6 +1030,7 @@
 				550D99111BE23D8D003EA39A /* SMHotRecomendNewsCell.m in Sources */,
 				55FAF10E1BE254B60049121A /* SMNewsTool.m in Sources */,
 				557AFD621BE1D18500E97235 /* SMSwitchCell.m in Sources */,
+				55997A0F1BE60CC800153349 /* SMForumCatagory.m in Sources */,
 				55A4A0D81BE316FE0003BBBD /* SMUser.m in Sources */,
 				55FAF1151BE255E50049121A /* SMAccountTool.m in Sources */,
 				55D41F841BE12C1700CF9DF0 /* SMChatSettingController.m in Sources */,
@@ -1014,6 +1041,7 @@
 				550D98FE1BE20FDB003EA39A /* SMRecomendCell.m in Sources */,
 				55FC28C91BE474D800B287E1 /* SMMainViewController.m in Sources */,
 				550D990B1BE231B0003EA39A /* SMRecommendNesFrame.m in Sources */,
+				55997A151BE60DE600153349 /* SMMidCatagory.m in Sources */,
 				55A4A0DB1BE348760003BBBD /* NSDate+MJ.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

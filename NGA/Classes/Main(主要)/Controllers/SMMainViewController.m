@@ -10,6 +10,12 @@
 #import "UIBarButtonItem+Extension.h"
 #import "SMHomeViewController.h"
 #import "SMForumListController.h"
+#import "AFNetworking.h"
+#import "MJExtension.h"
+#import "SMMidCatagory.h"
+#import "SMForumList.h"
+#import "SMForumCatagory.h"
+
 
 @interface SMMainViewController ()
 
@@ -19,6 +25,9 @@
 @property (nonatomic,strong) SMHomeViewController *homeVc;
 @property (nonatomic,strong) SMForumListController *forumVc;
 
+@property (nonatomic,strong) NSArray *listNameArray;
+
+@property (nonatomic,strong) NSMutableArray *listArray;
 
 
 @end
@@ -72,7 +81,6 @@
 - (SMForumListController *)forumVc{
     if (!_forumVc) {
         _forumVc = [[SMForumListController alloc] init];
-        _forumVc.view.backgroundColor = SMGlobleColor;
     }
     return _forumVc;
 }
@@ -82,13 +90,20 @@
     [super viewDidLoad];
 //    self.view.backgroundColor = SMGlobleColor;
     
+
     // 设置导航条
     [self setNav];
     
     // 进入后默认选中了推荐
     [self enterHomeView];
+    
     self.seg.selectedSegmentIndex = 0;
 //    [SMNotificationCenter postNotificationName:@"UIControlEventValueChanged" object:nil];
+
+    
+//    // 加载列表数据
+//    [self loadForumList];
+    
 
 }
 
@@ -141,17 +156,19 @@
     
 }
 
+
 - (void)enterHomeView{
-    SMLog(@"dasd");
+    SMLog(@"enterHomeView");
 //    self.homeVc.view.hidden = NO;
 //    self.forumVc.view.hidden = YES;
+
     [self.forumVc.view removeFromSuperview];
     [self.view addSubview:self.homeVc.view];
 
 }
 
 - (void)enterForumView{
-    SMLog(@"dasdaaa");
+    SMLog(@"enterForumView");
 //    self.homeVc.view.hidden = YES;
 //    self.forumVc.view.hidden = NO;
     [self.homeVc.view removeFromSuperview];

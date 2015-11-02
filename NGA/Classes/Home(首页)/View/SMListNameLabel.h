@@ -12,4 +12,5 @@
 
 @property (nonatomic,assign) CGFloat scale;
 
+@property (nonatomic,weak)UIImageView *backImage;
 @end

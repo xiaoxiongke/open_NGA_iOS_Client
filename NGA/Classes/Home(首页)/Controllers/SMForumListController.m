@@ -11,17 +11,25 @@
 #import "SMHomeNavViewController.h"
 #import "SMListNameLabel.h"
 #import "SMForumListTableController.h"
-
-
+#import "AFNetworking.h"
+#import "MJExtension.h"
+#import "SMForumList.h"
+#import "SMForumCatagory.h"
+#import "SMMidCatagory.h"
 
 @interface SMForumListController ()<UIScrollViewDelegate>
-
 /**
  *  横向标题列表
  */
 @property (nonatomic,strong) UIScrollView *listScrollView;
-
+/**
+ *  bigModel
+ */
 @property (nonatomic,strong) NSArray *listNameArray;
+
+
+@property (nonatomic,strong) NSMutableArray *listArray;
+
 
 ///** 标题下面的内容栏 */
 @property (nonatomic,strong) UIScrollView *contentScrollView;
@@ -32,11 +40,42 @@
 
 @implementation SMForumListController
 
+- (instancetype)init{
+    
+    if (self = [super init]) {
+        
+      
+    }
+    return self;
+
+}
+
+
+- (NSArray *)listNameArray{
+    if (!_listNameArray) {
+        _listNameArray = @[@"我的收藏",@"网事杂谈精选",@"魔兽世界",@"往事杂谈",@"暴雪游戏",@"游戏专版"];
+
+    }
+    return _listNameArray;
+}
+
+- (NSMutableArray *)listArray{
+    if (!_listArray) {
+        
+        _listArray = [NSMutableArray array];
+
+    }
+    return _listArray;
+    
+}
+
+
 - (UIScrollView *)listScrollView{
     if (!_listScrollView) {
 
         _listScrollView = [[UIScrollView alloc] init];
         [self.view addSubview:_listScrollView];
+        _listScrollView.backgroundColor = SMlightColor;
     }
     return _listScrollView;
 }
@@ -51,36 +90,31 @@
 }
 
 
-- (NSArray *)listNameArray{
-    if (!_listNameArray) {
-        _listNameArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NewsURLs.plist" ofType:nil]];
-    }
-    return _listNameArray;
-}
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
- 
-   UIButton *btn = [UIButton buttonWithType:UIButtonTypeContactAdd];
-    btn.frame = CGRectMake(120, 120, 50, 50);
-    [self.view addSubview:btn];
+
+    self.view.backgroundColor = SMContentFontColor;
+    // 加载列表数据
+    [self loadForumList];
+
+   
+
+}
+
+- (void)setUpScrollView{
     
     CGFloat listScrollY = 64;
-    CGFloat listScrollH = 44;
+    CGFloat listScrollH = 30;
     self.listScrollView.frame = CGRectMake(0, listScrollY, SMScreenW, listScrollH);
     self.contentScrollView.frame = CGRectMake(0, listScrollY + listScrollH, SMScreenW, self.view.height - listScrollH - 64);
-//    
-//    [self.view addSubview:self.listScrollView];
-//    [self.view addSubview:self.contentScrollView];
+    
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.listScrollView.showsHorizontalScrollIndicator = NO;
     self.listScrollView.showsVerticalScrollIndicator = NO;
     self.contentScrollView.delegate = self;
     
-    [self addController];
-    [self addLable];
+    
     
     CGFloat contentX = self.childViewControllers.count * [UIScreen mainScreen].bounds.size.width;
     self.contentScrollView.contentSize = CGSizeMake(contentX, 0);
@@ -93,20 +127,26 @@
     SMListNameLabel *lable = [self.listScrollView.subviews firstObject];
     lable.scale = 1.0;
     self.contentScrollView.showsHorizontalScrollIndicator = NO;
-
     
+
 }
+
 
 #pragma mark - ******************** 添加方法
 
 /** 添加子控制器 */
-- (void)addController
+- (void)addController:(NSMutableArray *)arrayM
 {
+
     for (int i=0 ; i<self.listNameArray.count ;i++){
+        
+        
         SMForumListTableController  *vc1 = [[SMForumListTableController alloc] init];
 
-        vc1.titleNavBarTitle = self.listNameArray[i][@"title"];
-        vc1.urlString = self.listNameArray[i][@"urlString"];
+        vc1.menuTitle = self.listNameArray[i];
+
+        vc1.bigModelArray = arrayM;
+
         [self addChildViewController:vc1];
     };
 }
@@ -114,23 +154,25 @@
 /** 添加标题栏 */
 - (void)addLable
 {
-    for (int i = 0; i < 8; i++) {
-        CGFloat lblW = 70;
-        CGFloat lblH = 40;
+    for (int i = 0; i < self.listNameArray.count; i++) {
+        CGFloat lblW = 80;
+        CGFloat lblH = 35;
         CGFloat lblY = 0;
         CGFloat lblX = i * lblW;
-        SMListNameLabel *lbl1 = [[SMListNameLabel alloc]init];
-        UIViewController *vc = self.childViewControllers[i];
-        lbl1.text =vc.title;
+        SMListNameLabel *lbl1 = [[SMListNameLabel alloc] init];
+        SMForumListTableController *vc = self.childViewControllers[i];
+
+        lbl1.text = vc.menuTitle;
         lbl1.frame = CGRectMake(lblX, lblY, lblW, lblH);
-        lbl1.font = [UIFont fontWithName:@"HYQiHei" size:19];
+//        lbl1.font = [UIFont fontWithName:@"HYQiHei" size:19];
+        lbl1.font = SMTitleFont;
         [self.listScrollView addSubview:lbl1];
         lbl1.tag = i;
         lbl1.userInteractionEnabled = YES;
         
         [lbl1 addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(lblClick:)]];
     }
-    self.listScrollView.contentSize = CGSizeMake(70 * 8, 0);
+    self.listScrollView.contentSize = CGSizeMake(100 * self.listNameArray.count, 0);
     
 }
 
@@ -145,15 +187,15 @@
     CGPoint offset = CGPointMake(offsetX, offsetY);
     
     [self.contentScrollView setContentOffset:offset animated:YES];
-    
-    
 }
+
 
 #pragma mark - ******************** scrollView代理方法
 
 /** 滚动结束后调用（代码导致） */
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
+    
     // 获得索引
     NSUInteger index = scrollView.contentOffset.x / self.contentScrollView.frame.size.width;
     
@@ -213,6 +255,73 @@
     
 }
 
+
+/**
+ *  加载列表数据
+ */
+- (void)loadForumList{
+    
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+//    param[@"guest_token"] = @"guest05635420082000";
+    
+    [mgr POST:@"http://bbs.nga.cn/app_api.php?__lib=home&__act=category" parameters:param success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        // 设置最新获取的帖子
+        
+        NSArray *arr = responseObject[@"result"];
+        
+        SMLog(@"%@",arr);
+        
+        if (arr.count != 0){
+
+
+            
+        if ([NSThread isMainThread])
+        {
+            // 列表菜单模型数组
+
+            self.listArray = [SMForumCatagory objectArrayWithKeyValuesArray:arr];
+ 
+            [self addController:self.listArray];
+            
+            [self addLable];
+            [self setUpScrollView];
+        }
+        else
+        {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                // 列表菜单模型数组
+            self.listArray = [SMForumCatagory objectArrayWithKeyValuesArray:arr];
+            [self addController:self.listArray];
+                
+            [self addLable];
+            [self setUpScrollView];
+            });  
+        }
+        
+    
+//            // 发出通知
+//            [SMNotificationCenter postNotificationName:@"SMForumList" object:nil userInfo:@{@"array":array}];
+            
+        }
+        
+        
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        
+        SMLog(@"%@",error);
+        
+    }];
+
+    
+}
+
+
+- (void)dealloc{
+
+//    [SMNotificationCenter removeObserver:self name:@"SMForumList" object:nil];
+    
+}
 
 
 @end

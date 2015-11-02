@@ -8,18 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SMForumListTableController : UIViewController
+@interface SMForumListTableController : UITableViewController
 
-/**
- *  url端口
- */
-@property(nonatomic,copy) NSString *urlString;
 
 /**
  *  标题
  */
-@property(nonatomic,copy) NSString *titleNavBarTitle;
+@property(nonatomic,copy) NSString *menuTitle;
 
 @property (nonatomic,assign) NSInteger index;
+
+/**
+ *  大模型
+ */
+@property (nonatomic,strong)NSArray *bigModelArray;
+
+
+
 
 @end

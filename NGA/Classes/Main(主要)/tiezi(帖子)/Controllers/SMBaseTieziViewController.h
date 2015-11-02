@@ -12,4 +12,6 @@
 
 @property (nonatomic,strong)NSMutableArray *tieziFrameArray;
 
+@property (nonatomic,copy) NSString *navTitle;
+
 @end

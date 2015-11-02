@@ -103,9 +103,7 @@
     self.view.backgroundColor = SMContentFontColor;
     // 加载列表数据
     [self loadForumList];
-    
-    [self addLable];
-    [self setUpScrollView];
+
 
 }
 
@@ -137,6 +135,8 @@
     SMListNameLabel *lable = [self.listScrollView.subviews firstObject];
     lable.scale = 1.0;
     self.contentScrollView.showsHorizontalScrollIndicator = NO;
+
+    
 }
 
 
@@ -153,13 +153,13 @@
             SMFavorViewController  *vc0 = [[SMFavorViewController alloc] init];
             
             SMHomeNavViewController *nav = [[SMHomeNavViewController alloc] initWithRootViewController:vc0];
-//            nav.navigationBarHidden = YES;
+            nav.navigationBarHidden = YES;
             [self addChildViewController:nav];
             
         }else{
             SMForumListTableController  *vc1 = [[SMForumListTableController alloc] init];
             SMHomeNavViewController *nav = [[SMHomeNavViewController alloc] initWithRootViewController:vc1];
-//            nav.navigationBarHidden = YES;
+            nav.navigationBarHidden = YES;
             vc1.menuTitle = self.listNameArray[i];
             
             vc1.bigModel = arrayM[i - 1];
@@ -306,6 +306,10 @@
             
             // 添加控制器和Label
             [self addController:self.listArray];
+            
+            
+            [self addLable];
+            [self setUpScrollView];
 
         }
         else
@@ -316,6 +320,10 @@
                 
             // 添加控制器和Label
             [self addController:self.listArray];
+                
+                
+            [self addLable];
+            [self setUpScrollView];
                 
             });  
         }

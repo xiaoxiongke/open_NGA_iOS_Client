@@ -172,6 +172,12 @@
             }
             [self.tieziFrameArray addObjectsFromArray:moreNews];
             
+            
+            // 刷新表格
+            [self.tableView reloadData];
+            // 结束下拉刷新
+            [self.tableView.footer endRefreshing];
+            
 
         }
         else
@@ -187,15 +193,15 @@
                 }
                 [self.tieziFrameArray addObjectsFromArray:moreNews];
                 
+                
+                // 刷新表格
+                [self.tableView reloadData];
+                // 结束下拉刷新
+                [self.tableView.footer endRefreshing];
+                
             });  
         }
 
-        
-        // 刷新表格
-        [self.tableView reloadData];
-        // 结束下拉刷新
-        [self.tableView.footer endRefreshing];
-        
         
         
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {

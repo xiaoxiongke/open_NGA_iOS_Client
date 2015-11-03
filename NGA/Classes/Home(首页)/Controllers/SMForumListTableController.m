@@ -69,9 +69,6 @@
 }
 
 
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -120,22 +117,37 @@
         SMForumList *list = midModel.list[indexPath.row];
         // 传递模型
         cell.listModel = list;
-        cell.listModel.name = self.tieziTitle;
+//        self.tieziTitle = [[NSString alloc] init];
+//        self.tieziTitle = cell.listModel.name;
+
+        cell.selectedBackgroundView.backgroundColor = SMColor(69, 17, 3);
+        cell.selectedBackgroundView.frame = cell.frame;
     }
 
     return cell;
 }
 
+
+
 #pragma mark - tableView的代理方法
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    // 发送请求
-    [self loadNewData];
+    // 取出模型
+    SMForumCatagory *bigModel = self.bigModel;
+    SMMidCatagory *midModel = bigModel.list[0];
+    SMForumList *list = midModel.list[indexPath.row];
 
+    // 发送请求，给创建出来的控制器传递模型
+    [self loadNewData:list];
+    //消除cell选择痕迹
+    [self performSelector:@selector(deselect) withObject:nil afterDelay:0.2f];
 
 }
 
+- (void)deselect
+{
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+}
 
 
 //
@@ -147,7 +159,7 @@
 /**
  *  加载最新新闻
  */
-- (void)loadNewData{
+- (void)loadNewData:(SMForumList *)list{
     
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
@@ -187,12 +199,10 @@
             // 取出模型
             tieziVc.tieziFrameArray = self.tieziFrameArray;
             
-            for(SMForumList *list in self.smallModelArray)
-                tieziVc.title = list.name;
-            
-            
-        
-            
+            // 传递模型
+            tieziVc.list = list;
+
+           
             if (ios8dwon) {
                 [self presentViewController:nav  animated:YES completion:nil];
 //                [self.navigationController pushViewController:tieziVc animated:YES];
@@ -201,9 +211,7 @@
             }else{
                 [self showViewController:nav sender:nil];
             }
-            
-
-            
+        
         }
         else
         {
@@ -222,8 +230,9 @@
                 // 取出模型
                 tieziVc.tieziFrameArray = self.tieziFrameArray;
                 
-                for(SMForumList *list in self.smallModelArray)
-                    tieziVc.title = list.name;
+                // 传递模型
+                tieziVc.list = list;
+                
                 if (ios8dwon) {
                     [self presentViewController:nav  animated:YES completion:nil];
 //                [self.navigationController pushViewController:tieziVc animated:YES];
@@ -250,36 +259,3 @@
 @end
     
     
-/**
- *  加载更多新闻
- */
-
-//- (void)loadMoreData{
-//    
-//    AFHTTPRequestOperationManager *mggr = [AFHTTPRequestOperationManager manager];
-//    
-//#warning TODO 请求更多数据暂时不会实现
-//    NSMutableDictionary *param = [NSMutableDictionary dictionary];
-//    //    param[@"currentPage"] = @2;
-//    //    param[@"guest_token"] = @"guest056332ba85d0d4";
-//    
-//    [mggr POST:@"http://bbs.nga.cn/app_api.php?__lib=subject&__act=list" parameters:param success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-//
-//            // 列表菜单模型数组
-//            NSArray *newsArray = [SMTieziModel objectArrayWithKeyValuesArray:responseObject[@"data"]];
-//            NSMutableArray *moreNews = [NSMutableArray array];
-//            for (SMTieziModel *news in newsArray) {
-//                SMTieziFrameModel *recF = [[SMTieziFrameModel alloc] init];
-//                recF.tiezi = news;
-//                [moreNews addObject:recF];
-//            }
-//            [self.tieziFrameArray addObjectsFromArray:moreNews];
-//
-//        
-//    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
-//
-//        
-//    }];
-//    
-//}
-//

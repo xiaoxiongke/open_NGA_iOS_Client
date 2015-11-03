@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "SMTieziFrameModel.h"
+#import "SMForumList.h"
+
 @interface SMBaseTieziViewController : UITableViewController
 
 @property (nonatomic,strong)NSMutableArray *tieziFrameArray;
 
 @property (nonatomic,copy) NSString *navTitle;
+
+@property (nonatomic,strong)SMForumList *list;
 
 @end

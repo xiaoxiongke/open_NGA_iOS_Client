@@ -16,6 +16,7 @@
 @interface SMBaseTieziViewController ()
 
 
+
 @end
 
 @implementation SMBaseTieziViewController
@@ -31,8 +32,7 @@
     self.tableView.backgroundColor = SMGlobleColor;
     
     // 设置headerView
-//    self.tableView.tableHeaderView = [[UISwitch alloc] init];
-    
+
     // 添加下拉刷新控件
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
@@ -53,7 +53,7 @@
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(backToForumList) image:@"back_arrow" highImage:@"back_arrow_night"];
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(moreClick) image:@"navbar_moremenu_selected" highImage:@"navbar_moremenu_selected"];
-
+    self.title = self.list.name;
 }
 
 /**
@@ -113,6 +113,9 @@
         SMTieziFrameModel *tieziF = self.tieziFrameArray[indexPath.row];
         // 给cell 传递模型
         cell.tieziFrame = tieziF;
+
+        cell.selectedBackgroundView.backgroundColor = SMColor(69, 17, 3);
+        cell.selectedBackgroundView.frame = cell.frame;
         
         return cell;
     }
@@ -120,12 +123,26 @@
     return cell;
 }
 
+
+
 #pragma mark - tableView的代理方法
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    
+    //消除cell选择痕迹
+    [self performSelector:@selector(deselect) withObject:nil afterDelay:0.2f];
+    
 }
 
+/**
+ *  取消cell选择痕迹
+ */
+- (void)deselect
+{
+    
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -137,8 +154,25 @@
  */
 - (void)loadNewData{
     
+    NSInteger page = 1;
+    
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    NSString *param = nil;
+//    NSString *param = nil;
+    
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"access_token"] = @"9a9a07dff2a3bd3ec92d52c1303439cf";
+    param[@"access_uid"] = @"8081883";
+    param[@"app_id"] = @"1001";
+    param[@"fid"] = self.list.ID;
+    param[@"sign"] = @"56660402e0a03d1b4bae45af4039e799";
+    
+    param[@"page"] = @(++page);
+    
+    NSDate *now = [NSDate date];
+    NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[now timeIntervalSince1970]];
+    
+    param[@"t"] = timeSp;
+    
     [mgr POST:@"http://bbs.nga.cn/app_api.php?__lib=subject&__act=list" parameters:param success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
         // 设置最新获取的帖子

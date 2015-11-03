@@ -23,6 +23,8 @@
 // 随机色
 #define SMRandomColor SMColor(arc4random_uniform(255),arc4random_uniform(255),arc4random_uniform(255))
 
+// 选中颜色
+#define SMSelectColor SMColor(69,17,3)
 
 #import "MMDrawerController.h"
 #import "UIViewController+MMDrawerController.h"

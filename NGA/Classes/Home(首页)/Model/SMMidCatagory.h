@@ -13,7 +13,7 @@
 /**
  *  序号 id
  */
-@property (nonatomic,assign)NSInteger ID;
+@property (nonatomic,copy)NSString *ID;
 
 
 /**

@@ -12,7 +12,7 @@
 #import "SMTieziFrameModel.h"
 #import "SMTieziCell.h"
 #import "MJExtension.h"
-
+#import "UIBarButtonItem+Extension.h"
 @interface SMBaseTieziViewController ()
 
 
@@ -23,6 +23,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    [self loadMoreData];
+    
+    // 设置导航条
+    [self setUpNav];
+    
     [self loadNewData];
     self.tableView.backgroundColor = SMGlobleColor;
     
@@ -45,7 +49,46 @@
 }
 
 
+- (void)setUpNav{
+    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(backToForumList) image:@"back_arrow" highImage:@"back_arrow_night"];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(moreClick) image:@"navbar_moremenu_selected" highImage:@"navbar_moremenu_selected"];
 
+}
+
+/**
+ *  返回论坛列表
+ */
+- (void)backToForumList{
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+}
+
+
+/**
+ *  点击了更多
+ */
+- (void)moreClick{
+
+    UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"更多" message:@"点击了更多按钮" preferredStyle:UIAlertControllerStyleActionSheet];
+ 
+    UIAlertAction *cancleBtn = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        SMLog(@"点击了取消按钮");
+    }];
+    UIAlertAction *resetBtn = [UIAlertAction actionWithTitle:@"重置" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        SMLog(@"点击了重置按钮");
+    }];
+    UIAlertAction *defaultBtn = [UIAlertAction actionWithTitle:@"默认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        SMLog(@"点击了默认按钮");
+    }];
+    [alertVc addAction:cancleBtn];
+    [alertVc addAction:resetBtn];
+    [alertVc addAction:defaultBtn];
+    
+    
+    [self presentViewController:alertVc animated:YES completion:nil];
+}
 
 #pragma mark - tableView的数据源方法
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

@@ -183,13 +183,26 @@
             self.tieziFrameArray = arrMF;
             
             SMBaseTieziViewController *tieziVc = [[SMBaseTieziViewController alloc] initWithStyle:UITableViewStylePlain];
-            
+            SMHomeNavViewController *nav = [[SMHomeNavViewController alloc] initWithRootViewController:tieziVc];
             // 取出模型
             tieziVc.tieziFrameArray = self.tieziFrameArray;
             
             for(SMForumList *list in self.smallModelArray)
                 tieziVc.title = list.name;
-            [self showViewController:tieziVc sender:nil];
+            
+            
+        
+            
+            if (ios8dwon) {
+                [self presentViewController:nav  animated:YES completion:nil];
+//                [self.navigationController pushViewController:tieziVc animated:YES];
+
+                
+            }else{
+                [self showViewController:nav sender:nil];
+            }
+            
+
             
         }
         else
@@ -204,14 +217,21 @@
                 self.tieziFrameArray = arrMF;
                 
                 SMBaseTieziViewController *tieziVc = [[SMBaseTieziViewController alloc] initWithStyle:UITableViewStylePlain];
+                SMHomeNavViewController *nav = [[SMHomeNavViewController alloc] initWithRootViewController:tieziVc];
                 
                 // 取出模型
                 tieziVc.tieziFrameArray = self.tieziFrameArray;
                 
                 for(SMForumList *list in self.smallModelArray)
                     tieziVc.title = list.name;
+                if (ios8dwon) {
+                    [self presentViewController:nav  animated:YES completion:nil];
+//                [self.navigationController pushViewController:tieziVc animated:YES];
+                    
+                }else{
+                    [self showViewController:nav sender:nil];
+                }
                 
-                [self showViewController:tieziVc sender:nil];
             });
         }
         
@@ -225,9 +245,7 @@
      }];
     
 }
-
-
-        
+  
     
 @end
     

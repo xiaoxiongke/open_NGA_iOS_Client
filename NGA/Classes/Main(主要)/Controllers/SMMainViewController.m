@@ -100,8 +100,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
 //    self.view.backgroundColor = SMGlobleColor;
 
+    
     // 添加通知
 //    [SMNotificationCenter addObserver:self selector:@selector(hideNavBar) name:@"celldidClick" object:nil];
     

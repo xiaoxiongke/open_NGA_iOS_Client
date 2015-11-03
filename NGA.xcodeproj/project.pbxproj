@@ -1280,7 +1280,7 @@
 					"\"${PODS_ROOT}/Headers/Public/ZYQAssetPickerController\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/NGA/Classes/Other(其他)/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eorin.NGA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1313,7 +1313,7 @@
 					"\"${PODS_ROOT}/Headers/Public/ZYQAssetPickerController\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/NGA/Classes/Other(其他)/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eorin.NGA;
 				PRODUCT_NAME = "$(TARGET_NAME)";

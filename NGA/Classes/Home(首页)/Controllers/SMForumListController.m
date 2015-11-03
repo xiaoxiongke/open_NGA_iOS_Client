@@ -17,7 +17,7 @@
 #import "SMForumCatagory.h"
 #import "SMMidCatagory.h"
 #import "SMFavorViewController.h"
-
+#import "SMBaseTieziViewController.h"
 
 @interface SMForumListController ()<UIScrollViewDelegate>
 /**
@@ -100,7 +100,7 @@
 //    [SMNotificationCenter addObserver:self selector:@selector(changeScrollPosition) name:@"celldidClick" object:nil];
 
     
-    self.view.backgroundColor = SMContentFontColor;
+    self.view.backgroundColor = SMGlobleColor;
     // 加载列表数据
     [self loadForumList];
 
@@ -150,9 +150,9 @@
         
         if (i == 0) {
             // 我的收藏页面
-            SMFavorViewController  *vc0 = [[SMFavorViewController alloc] init];
+            SMBaseTieziViewController *favourite = [[SMBaseTieziViewController alloc] init];
             
-            SMHomeNavViewController *nav = [[SMHomeNavViewController alloc] initWithRootViewController:vc0];
+            SMHomeNavViewController *nav = [[SMHomeNavViewController alloc] initWithRootViewController:favourite];
             nav.navigationBarHidden = YES;
             [self addChildViewController:nav];
             
@@ -288,8 +288,7 @@
     
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
-//    param[@"guest_token"] = @"guest05635420082000";
-    
+
     [mgr POST:@"http://bbs.nga.cn/app_api.php?__lib=home&__act=category" parameters:param success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
         // 设置最新获取的帖子
